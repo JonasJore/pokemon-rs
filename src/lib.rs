@@ -1,5 +1,5 @@
 #![deny(unused_import_braces)]
-#![allow(dead_code)]
+#![allow(dead_code, non_upper_case_globals)]
 
 extern crate rand;
 extern crate serde_json;
@@ -44,8 +44,8 @@ pub mod pokemon {
         let pokemon_list = get_pokemon(locale).unwrap();
         pokemon_list[id - 1].to_string()
     }
-    pub fn get_id_by_name(name: &str) -> usize {
-        let pokemon_list = get_pokemon(None).unwrap();
+    pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
+        let pokemon_list = get_pokemon(locale).unwrap();
         pokemon_list
             .iter()
             .position(|pokemon| pokemon == name)

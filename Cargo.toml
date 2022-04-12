@@ -3,8 +3,11 @@ name = "pokemon-rs"
 version = "0.1.0"
 authors = ["JonasJore <jonas.jore@gmail.com>"]
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+readme = "README.md"
+homepage = "https://github.com/JonasJore/pokemon-rs.git"
+documentation = "https://github.com/JonasJore/pokemon-rs"
+description = "Rust crate for getting Pokémon names"
+repository = "https://github.com/JonasJore/pokemon-rs"
 
 [dependencies]
 serde_json = "1.0.79"
