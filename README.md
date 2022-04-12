@@ -4,6 +4,8 @@
 This crate is for getting Pokémon names, currently only first generation pokemon
 is available (pull-requests for adding more pokemon welcome) for [languages](#supported-languages)
 
+This tiny package is inspired by [Pokémon](https://github.com/sindresorhus/pokemon)
+
 usage:
 
 ```rust

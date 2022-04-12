@@ -3,6 +3,7 @@ name = "pokemon-rs"
 version = "1.0.0"
 authors = ["JonasJore <jonas.jore@gmail.com>"]
 edition = "2018"
+license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/JonasJore/pokemon-rs.git"
 documentation = "https://github.com/JonasJore/pokemon-rs"
