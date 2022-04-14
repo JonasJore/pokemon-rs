@@ -11,5 +11,4 @@ description = "Rust crate for getting Pokémon names"
 repository = "https://github.com/JonasJore/pokemon-rs"
 
 [dependencies]
-serde_json = "1.0.79"
 rand = "0.8.5"
