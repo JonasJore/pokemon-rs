@@ -10,7 +10,7 @@ pub mod pokemon {
     use std::error::Error;
     use std::fs::File;
 
-    const english: &'static str = "./src/data/en.json";
+    const english: &'static str = "src/data/en.json";
     const repo_issues: &'static str = "https://github.com/JonasJore/pokemon-rs/issues";
 
     fn supported_languages() -> HashSet<&'static str> {
@@ -28,7 +28,7 @@ pub mod pokemon {
             panic!("Translated list for language code {} does not exit. Feel free to post a issue here: {}", language, repo_issues);
         }
 
-        let file: File = File::open(format!("./src/data/{}.json", language))?;
+        let file: File = File::open(format!("src/data/{}.json", language))?;
         let translated_pokemon_list: Vec<String> = serde_json::from_reader(&file)?;
 
         Ok(translated_pokemon_list)
