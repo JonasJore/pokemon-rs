@@ -48,7 +48,7 @@ fn get_translated_list(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Error>
 fn get_pokemon(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Error>> {
     get_translated_list(locale)
 }
-fn get_all(locale: Option<&str>) -> Vec<&str> {
+pub fn get_all(locale: Option<&str>) -> Vec<&str> {
     let pokemon_list = get_pokemon(locale);
     pokemon_list.unwrap()
 }
