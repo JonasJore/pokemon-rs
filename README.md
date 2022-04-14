@@ -1,26 +1,26 @@
-# pokemon-rs
+# pokemon_rs-rs
 
 ## Description
 This crate is for getting Pokémon names, currently only first generation pokemon
 is available (pull-requests for adding more pokemon welcome) for [languages](#supported-languages)
 
-This tiny package is inspired by [Pokémon](https://github.com/sindresorhus/pokemon)
+This is a rust-library inspired by [Pokémon](https://github.com/sindresorhus/pokemon_rs)
 
 usage:
 
 ```rust
-use pokemon;
+use pokemon_rs;
 
-pokemon::get_all(None);
+pokemon_rs::get_all(None);
 // => ['Bulbasaur', ...]
 
-pokemon::get_by_id(33, None);
+pokemon_rs::get_by_id(33, None);
 // => Nidorino
 
-pokemon::get_id_by_name("Pikachu", None);
+pokemon_rs::get_id_by_name("Pikachu", None);
 // => 25
 
-pokemon::random(None);
+pokemon_rs::random(None);
 // => Raichu
 ```
 
