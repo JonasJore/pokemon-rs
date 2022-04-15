@@ -1,4 +1,4 @@
-# pokemon_rs
+# pokemon-rs
 
 ## Description
 This crate is for getting Pokémon names, currently only first generation pokemon
