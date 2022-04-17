@@ -1,10 +1,10 @@
-# pokemon_rs-rs
+# pokemon-rs
 
 ## Description
 This crate is for getting Pokémon names, currently only first generation pokemon
 is available (pull-requests for adding more pokemon welcome) for [languages](#supported-languages)
 
-This is a rust-library inspired by [Pokémon](https://github.com/sindresorhus/pokemon_rs)
+This is a rust-library inspired by [Pokémon](https://github.com/sindresorhus/pokemon)
 
 usage:
 
