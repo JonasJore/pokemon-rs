@@ -16,6 +16,7 @@ use data::jp::jp;
 use data::ru::ru;
 
 const repo_issues: &'static str = "https://github.com/JonasJore/pokemon-rs/issues";
+const repo_link: &'static str = "https://github.com/JonasJore/pokemon-rs/";
 
 fn supported_languages() -> HashSet<&'static str> {
     return HashSet::from(["en", "jp", "fr", "de", "ru", "ch"]);
@@ -28,10 +29,6 @@ fn get_translated_list(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Error>
         return Ok(english_file);
     }
 
-    if !supported_languages().contains(language) {
-        panic!("Translated list for language code {} does not exist. Feel free to post a issue here: {}", language, repo_issues);
-    }
-
     let translated_pokemon_list: Vec<&'static str> = match locale {
         Some("ch") => ch(),
         Some("de") => de(),
@@ -39,8 +36,11 @@ fn get_translated_list(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Error>
         Some("fr") => fr(),
         Some("jp") => jp(),
         Some("ru") => ru(),
-        //None => todo!(),
-        _ => panic!("error"),
+        _ => panic!(
+            "Language currently not supported. Want support for your language? Pull requests welcome at {}. Or you can just post a feature request as an issue here: {}",
+            repo_link,
+            repo_issues
+        )
     };
 
     Ok(translated_pokemon_list)
@@ -74,17 +74,4 @@ pub fn random(locale: Option<&str>) -> String {
 }
 
 #[cfg(test)]
-mod test {
-    use super::*;
-    #[test]
-    fn test_get_all() {
-        let list = get_all(None);
-        assert_eq!(list.len(), 151);
-        println!("{:?}", list);
-    }
-    #[test]
-    fn test_non_english_get_all_pokemon_get_bulbasaur() {
-        let bulbasaur_jp = get_by_id(1, Some("jp"));
-        assert_eq!(bulbasaur_jp, "フシギダネ");
-    }
-}
+mod test;
