@@ -14,6 +14,12 @@ pub mod test {
         assert_eq!(bulbasaur_jp, "フシギダネ");
     }
 
+    #[test]
+    fn chikorita_test_default_locale() {
+        let chikorita = get_by_id(152, None);
+        assert_eq!(chikorita, "Chikorita");
+    }
+
     #[cfg(test)]
     mod panic_tests {
         use super::*;
