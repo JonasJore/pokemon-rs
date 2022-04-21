@@ -1,18 +1,19 @@
 # pokemon-rs
 
 ## Description
-This crate is for getting Pokémon names, currently only first generation pokemon
-is available (pull-requests for adding more pokemon welcome) for [languages](#supported-languages)
 
-This is a rust-library inspired by [Pokémon](https://github.com/sindresorhus/pokemon)
-
-usage:
+This rust library is for getting Pokémon names
+is available (pull-requests for adding more pokemon welcome) for [languages](#supported-languages)  
+  
+Inspired by [Pokémon](https://github.com/sindresorhus/pokemon)  
+  
+Usage:
 
 ```rust
 use pokemon_rs;
 
 pokemon_rs::get_all(None);
-// => ['Bulbasaur', ...]
+// => ['Bulbasaur', 'Ivysaur', 'Vensaur', ...]
 
 pokemon_rs::get_by_id(33, None);
 // => Nidorino
@@ -22,9 +23,23 @@ pokemon_rs::get_id_by_name("Pikachu", None);
 
 pokemon_rs::random(None);
 // => Raichu
+
+// There is support for another language than default (None mapped to en) that can be given, like `Some("jp")`):
+pokemon_rs::get_all(Some("jp"));
+// => ['フシギダネ', 'フシギソウ', 'フシギバナ', ...]
+
+pokemon_rs::get_by_id(33, Some("jp"));
+// => ニドリーノ
+
+pokemon_rs::get_id_by_name("フシギダネ", Some("jp"))
+// => 1
+
+pokemon_rs::random(Some("jp"));
+// => プリン
 ```
 
 ## Supported languages
+
 ---
 `en`: English (default language if None is given as `locale`)  
 `jp`: Japanese  
