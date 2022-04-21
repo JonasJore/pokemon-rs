@@ -16,6 +16,16 @@ pub mod test {
         let chikorita = get_by_id(152, None);
         assert_eq!(chikorita, "Chikorita");
     }
+    #[test]
+    fn test_crossing_locale_and_given_pokemon_look_for_alternate_vector_for_finding_the_pokemon() {
+        let id = get_id_by_name("フシギダネ", Some("en"));
+        assert_eq!(id, 1);
+    }
+    #[test]
+    fn test_crossing_locale_and_given_pokemon_en_in_russian_locale() {
+        let id = get_id_by_name("Blastoise", Some("ru"));
+        assert_eq!(id, 9);
+    }
     #[cfg(test)]
     mod panic_tests {
         use super::*;

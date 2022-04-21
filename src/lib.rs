@@ -4,7 +4,6 @@
 extern crate rand;
 
 use rand::seq::SliceRandom;
-use std::collections::HashSet;
 use std::error::Error;
 
 mod data;
@@ -18,9 +17,6 @@ use data::ru::ru;
 const repo_issues: &'static str = "https://github.com/JonasJore/pokemon-rs/issues";
 const repo_link: &'static str = "https://github.com/JonasJore/pokemon-rs/";
 
-fn supported_languages() -> HashSet<&'static str> {
-    return HashSet::from(["en", "jp", "fr", "de", "ru", "ch"]);
-}
 fn get_translated_list(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Error>> {
     let language: &str = locale.unwrap_or("en");
 
@@ -58,6 +54,25 @@ pub fn get_by_id(id: usize, locale: Option<&str>) -> String {
 }
 pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
     let pokemon_list = get_pokemon(locale).unwrap();
+
+    if !pokemon_list.contains(&name) {
+        let list_alternate_locale = match name {
+            name if ch().contains(&name) => ch(),
+            name if de().contains(&name) => de(),
+            name if en().contains(&name) => en(),
+            name if fr().contains(&name) => fr(),
+            name if jp().contains(&name) => jp(),
+            name if ru().contains(&name) => ru(),
+            _ => panic!("The pokémon given does not seem to have been added to the list yet, PRs welcome at {}", repo_link)
+        };
+
+        return list_alternate_locale
+            .iter()
+            .position(|pokemon| pokemon.to_owned() == name)
+            .unwrap()
+            + 1;
+    }
+
     pokemon_list
         .iter()
         .position(|pokemon| pokemon.to_owned() == name)
