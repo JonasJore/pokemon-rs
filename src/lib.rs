@@ -1,12 +1,18 @@
-#![deny(unused_import_braces)]
+#![deny(
+    unused_import_braces,
+    unused_imports,
+    unused_variables,
+    unused_allocation,
+    unused_crate_dependencies,
+    unused_extern_crates
+)]
 #![allow(dead_code, non_upper_case_globals)]
-
-extern crate rand;
 
 use rand::seq::SliceRandom;
 use std::error::Error;
 
 mod data;
+
 use data::ch::ch;
 use data::de::de;
 use data::en::en;

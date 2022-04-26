@@ -1,6 +1,7 @@
+#[deny(unused_imports)]
 #[cfg(test)]
 pub mod test {
-    use crate::{get_all, get_by_id, get_id_by_name, random};
+    use crate::{get_all, get_by_id, get_id_by_name};
     #[test]
     fn test_get_all() {
         let list = get_all(None);
@@ -28,7 +29,7 @@ pub mod test {
     }
     #[cfg(test)]
     mod panic_tests {
-        use super::*;
+        use crate::{get_all, get_by_id, get_id_by_name, random};
 
         #[test]
         #[should_panic]
