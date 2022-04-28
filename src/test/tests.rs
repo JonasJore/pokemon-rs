@@ -47,6 +47,11 @@ pub mod test {
         let tyrannitar = get_by_id(248, Some("de"));
         assert_eq!(tyrannitar, "Despotar");
     }
+    #[test]
+    fn test_gen_2_support_chinese() {
+        let raikou = get_by_id(243, Some("ch"));
+        assert_eq!(raikou, "雷公");
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
