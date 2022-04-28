@@ -52,6 +52,11 @@ pub mod test {
         let raikou = get_by_id(243, Some("ch"));
         assert_eq!(raikou, "雷公");
     }
+    #[test]
+    fn test_gen_2_support_russian() {
+        let typlosion = get_by_id(157, Some("ru"));
+        assert_eq!(typlosion, "Тайфложн");
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
