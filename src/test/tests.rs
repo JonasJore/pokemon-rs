@@ -27,6 +27,16 @@ pub mod test {
         let id = get_id_by_name("Blastoise", Some("ru"));
         assert_eq!(id, 9);
     }
+    #[test]
+    fn test_gen_2_support_english() {
+        let lugia = get_by_id(249, None);
+        assert_eq!(lugia, "Lugia");
+    }
+    #[test]
+    fn test_gen_2_support_japanese() {
+        let lugia = get_by_id(249, Some("jp"));
+        assert_eq!(lugia, "ルギア");
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
