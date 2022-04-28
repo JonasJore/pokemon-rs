@@ -42,6 +42,11 @@ pub mod test {
         let igglybuff = get_by_id(174, Some("fr"));
         assert_eq!(igglybuff, "Toudoudou");
     }
+    #[test]
+    fn test_gen_2_support_german() {
+        let tyrannitar = get_by_id(248, Some("de"));
+        assert_eq!(tyrannitar, "Despotar");
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
