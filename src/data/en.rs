@@ -1,6 +1,6 @@
 pub fn en<'pokemon_en>() -> Vec<&'pokemon_en str> {
     vec![
-        // 1ST GEN
+        // GEN 1
         "Bulbasaur",
         "Ivysaur",
         "Venusaur",
@@ -152,7 +152,7 @@ pub fn en<'pokemon_en>() -> Vec<&'pokemon_en str> {
         "Dragonite",
         "Mewtwo",
         "Mew",
-        // 2ND GEN:
+        // GEN 2
         "Chikorita",
         "Bayleef",
         "Meganium",
@@ -252,6 +252,6 @@ pub fn en<'pokemon_en>() -> Vec<&'pokemon_en str> {
         "Tyranitar",
         "Lugia",
         "Ho-Oh",
-        "Celebi"
+        "Celebi",
     ]
 }
