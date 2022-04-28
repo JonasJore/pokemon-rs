@@ -56,7 +56,7 @@ pokemon_rs::random(Some("jp"));
 | 8 | Galar  | en(default) | ❌ |
 | 9 | TBA  | en(default) | ❌ |
 | 1 | Kanto | ch | ✅ |
-| 2 | Johto  | ch | ❌ |
+| 2 | Johto  | ch | ✅ |
 | 3 | Hoenn  | ch | ❌ |
 | 4 | Sinnoh | ch | ❌ |
 | 5 | Unova | ch | ❌ |
@@ -65,7 +65,7 @@ pokemon_rs::random(Some("jp"));
 | 8 | Galar  | ch | ❌ |
 | 9 | TBA | ch | ❌ |
 | 1 | Kanto | de | ✅ |
-| 2 | Johto | de | ❌ |
+| 2 | Johto | de | ✅ |
 | 3 | Hoenn | de | ❌ |
 | 4 | Sinnoh | de | ❌ |
 | 5 | Unova | de | ❌ |
@@ -74,7 +74,7 @@ pokemon_rs::random(Some("jp"));
 | 8 | Galar | de | ❌ |
 | 9 | TBA | de | ❌ |
 | 1 | Kanto | fr | ✅ |
-| 2 | Johto | fr | ❌ |
+| 2 | Johto | fr | ✅ |
 | 3 | Hoenn | fr | ❌ |
 | 4 | Sinnoh | fr | ❌ |
 | 5 | Unova | fr | ❌ |
@@ -83,7 +83,7 @@ pokemon_rs::random(Some("jp"));
 | 8 | Galar | fr | ❌ |
 | 9 | TBA | fr | ❌ |
 | 1 | Kanto | jp | ✅ |
-| 2 | Johto | jp | ❌ |
+| 2 | Johto | jp | ✅ |
 | 3 | Hoenn | jp | ❌ |
 | 4 | Sinnoh | jp | ❌ |
 | 5 | Unova | jp | ❌ |
@@ -92,7 +92,7 @@ pokemon_rs::random(Some("jp"));
 | 8 | Galar | jp | ❌ |
 | 9 | TBA | jp | ❌ |
 | 1 | Kanto | ru | ✅ |
-| 2 | Johto | ru | ❌ |
+| 2 | Johto | ru | ✅ |
 | 3 | Hoenn | ru | ❌ |
 | 4 | Sinnoh | ru | ❌ |
 | 5 | Unova | ru | ❌ |
