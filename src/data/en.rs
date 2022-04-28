@@ -1,4 +1,4 @@
-pub fn en() -> Vec<&'static str> {
+pub fn en<'pokemon_en>() -> Vec<&'pokemon_en str> {
     vec![
         // 1ST GEN
         "Bulbasaur",

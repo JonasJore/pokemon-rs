@@ -1,4 +1,4 @@
-pub fn de() -> Vec<&'static str> {
+pub fn de<'pokemon_de>() -> Vec<&'pokemon_de str> {
     vec![
         "Bisasam",
         "Bisaknosp",
@@ -150,6 +150,6 @@ pub fn de() -> Vec<&'static str> {
         "Dragonir",
         "Dragoran",
         "Mewtu",
-        "Mew"
-      ]
+        "Mew",
+    ]
 }

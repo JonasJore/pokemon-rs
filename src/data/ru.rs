@@ -1,4 +1,4 @@
-pub fn ru() -> Vec<&'static str> {
+pub fn ru<'pokemon_ru>() -> Vec<&'pokemon_ru str> {
     vec![
         "Бульбазавр",
         "Ивизавр",

@@ -1,4 +1,4 @@
-pub fn fr() -> Vec<&'static str> {
+pub fn fr<'pokemon_fr>() -> Vec<&'pokemon_fr str> {
     vec![
         "Bulbizarre",
         "Herbizarre",

@@ -1,4 +1,4 @@
-pub fn ch() -> Vec<&'static str> {
+pub fn ch<'pokemon_ch>() -> Vec<&'pokemon_ch str> {
     vec![
         "妙蛙種子",
         "妙蛙草",
