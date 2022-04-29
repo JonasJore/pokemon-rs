@@ -72,6 +72,11 @@ pub mod test {
         let marshtomp = get_by_id(259, Some("de"));
         assert_eq!(marshtomp, "Moorabbel");
     }
+    #[test]
+    fn test_gen_3_support_french() {
+        let jirachi = get_by_id(385, Some("fr"));
+        assert_eq!(jirachi, "Jirachi");
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
