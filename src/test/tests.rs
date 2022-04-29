@@ -77,6 +77,11 @@ pub mod test {
         let jirachi = get_by_id(385, Some("fr"));
         assert_eq!(jirachi, "Jirachi");
     }
+    #[test]
+    fn test_gen_3_support_japanese() {
+        let latias = get_by_id(380, Some("jp"));
+        assert_eq!(latias, "ラティアス");
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
