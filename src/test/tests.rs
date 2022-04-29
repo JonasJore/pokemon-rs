@@ -62,6 +62,11 @@ pub mod test {
         let deoxys = get_by_id(386, None);
         assert_eq!(deoxys, "Deoxys");
     }
+    #[test]
+    fn test_gen_3_support_chinese() {
+        let rayquaza = get_by_id(384, Some("ch"));
+        assert_eq!(rayquaza, "烈空坐");
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
