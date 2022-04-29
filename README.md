@@ -48,7 +48,7 @@ pokemon_rs::random(Some("jp"));
 | --- | --- | --- | --- |
 | 1 | Kanto | en(default) | ✅ |
 | 2 | Johto | en(default) | ✅ |
-| 3 | Hoenn | en(default) | ❌ |
+| 3 | Hoenn | en(default) | ✅ |
 | 4 | Sinnoh | en(default) | ❌ |
 | 5 | Unova | en(default) | ❌ |
 | 6 | Kalos | en(default) | ❌ |

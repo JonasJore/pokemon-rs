@@ -5,7 +5,7 @@ pub mod test {
     #[test]
     fn test_get_all() {
         let list = get_all(None);
-        assert_eq!(list.len(), 251);
+        assert_eq!(list.len(), 386);
     }
     #[test]
     fn test_non_english_get_all_pokemon_get_bulbasaur() {
@@ -57,10 +57,14 @@ pub mod test {
         let typlosion = get_by_id(157, Some("ru"));
         assert_eq!(typlosion, "Тайфложн");
     }
+    #[test]
+    fn test_gen_3_support_english() {
+        let deoxys = get_by_id(386, None);
+        assert_eq!(deoxys, "Deoxys");
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
-
         #[test]
         #[should_panic]
         fn get_all_should_panic_when_non_supported_language_is_given() {
