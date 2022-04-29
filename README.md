@@ -46,7 +46,7 @@ pokemon_rs::random(Some("jp"));
 
 |  Generation | Region | EN(default) | CH | DE | FR | JP | RU |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Kanto | ✅ | ✅ | ✅  | ✅ | ✅ | ✅  |
+| 1 | Kanto | ✅ | ✅ | ✅  | ✅ | ✅ | ✅ |
 | 2 | Johto | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 3 | Hoenn | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
 | 4 | Sinnoh | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
