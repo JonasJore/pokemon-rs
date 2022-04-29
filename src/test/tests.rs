@@ -82,6 +82,11 @@ pub mod test {
         let latias = get_by_id(380, Some("jp"));
         assert_eq!(latias, "ラティアス");
     }
+    #[test]
+    fn test_gen_3_support_russian() {
+        let regigas = get_by_id(379, Some("ru"));
+        assert_eq!(regigas, "Реджистил");
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
