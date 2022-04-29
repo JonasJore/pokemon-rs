@@ -17,7 +17,7 @@ Inspired by [Pokémon](https://github.com/sindresorhus/pokemon)
 use pokemon_rs;
 
 pokemon_rs::get_all(None);
-// => ['Bulbasaur', 'Ivysaur', 'Vensaur', ...]
+// => ['Bulbasaur', 'Ivysaur', 'Venusaur', ...]
 
 pokemon_rs::get_by_id(33, None);
 // => Nidorino
