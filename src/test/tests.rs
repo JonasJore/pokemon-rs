@@ -67,6 +67,11 @@ pub mod test {
         let rayquaza = get_by_id(384, Some("ch"));
         assert_eq!(rayquaza, "烈空坐");
     }
+    #[test]
+    fn test_gen_3_support_german() {
+        let marshtomp = get_by_id(259, Some("de"));
+        assert_eq!(marshtomp, "Moorabbel");
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
