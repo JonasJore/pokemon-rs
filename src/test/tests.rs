@@ -3,7 +3,7 @@
 pub mod test {
     use crate::{get_all, get_by_id, get_id_by_name};
 
-    const TOTAL_NUMBER_OF_POKEMON: usize = 721;
+    const TOTAL_NUMBER_OF_POKEMON: usize = 809;
 
     #[test]
     fn test_get_all() {
@@ -104,6 +104,11 @@ pub mod test {
     fn test_gen_6_support_english() {
         let yveltal = get_by_id(717, None);
         assert_eq!(yveltal, "Yveltal");
+    }
+    #[test]
+    fn test_gen_7_support_english() {
+        let melmetal = get_by_id(809, None);
+        assert_eq!(melmetal, "Melmetal");
     }
     #[cfg(test)]
     mod panic_tests {
