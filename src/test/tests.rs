@@ -2,10 +2,13 @@
 #[cfg(test)]
 pub mod test {
     use crate::{get_all, get_by_id, get_id_by_name};
+
+    const TOTAL_NUMBER_OF_POKEMON: usize = 493;
+
     #[test]
     fn test_get_all() {
         let list = get_all(None);
-        assert_eq!(list.len(), 386);
+        assert_eq!(list.len(), TOTAL_NUMBER_OF_POKEMON);
     }
     #[test]
     fn test_non_english_get_all_pokemon_get_bulbasaur() {
@@ -86,6 +89,11 @@ pub mod test {
     fn test_gen_3_support_russian() {
         let regigas = get_by_id(379, Some("ru"));
         assert_eq!(regigas, "Реджистил");
+    }
+    #[test]
+    fn test_gen_4_support_english() {
+        let regigas = get_by_id(493, None);
+        assert_eq!(regigas, "Arceus");
     }
     #[cfg(test)]
     mod panic_tests {
