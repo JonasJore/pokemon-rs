@@ -96,6 +96,12 @@ pub mod test {
         assert_eq!(arceus, "Arceus");
     }
     #[test]
+    fn test_gen_4_support_japanese() {
+        let arceus = get_by_id(445, Some("jp"));
+        assert_eq!(arceus, "ガブリアス");
+    }
+
+    #[test]
     fn test_gen_5_support_english() {
         let trubbish = get_by_id(568, None);
         assert_eq!(trubbish, "Trubbish");
