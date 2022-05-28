@@ -126,6 +126,11 @@ pub mod test {
         assert_eq!(melmetal, "Melmetal");
     }
     #[test]
+    fn test_gen_7_support_japanese() {
+        let torracat = get_by_id(726, Some("jp"));
+        assert_eq!(torracat, "ニャヒート");
+    }
+    #[test]
     fn test_gen_8_support_english() {
         let calyrex = get_by_id(898, None);
         assert_eq!(calyrex, "Calyrex");
