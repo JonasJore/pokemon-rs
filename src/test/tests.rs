@@ -97,8 +97,13 @@ pub mod test {
     }
     #[test]
     fn test_gen_4_support_japanese() {
-        let arceus = get_by_id(445, Some("jp"));
-        assert_eq!(arceus, "ガブリアス");
+        let garchomp = get_by_id(445, Some("jp"));
+        assert_eq!(garchomp, "ガブリアス");
+    }
+    #[test]
+    fn test_gen_5_support_japanese() {
+        let victini = get_by_id(494, Some("jp"));
+        assert_eq!(victini, "ビクティニ");
     }
 
     #[test]
