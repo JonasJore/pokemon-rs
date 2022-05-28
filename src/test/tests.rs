@@ -101,20 +101,24 @@ pub mod test {
         assert_eq!(garchomp, "ガブリアス");
     }
     #[test]
-    fn test_gen_5_support_japanese() {
-        let victini = get_by_id(494, Some("jp"));
-        assert_eq!(victini, "ビクティニ");
-    }
-
-    #[test]
     fn test_gen_5_support_english() {
         let trubbish = get_by_id(568, None);
         assert_eq!(trubbish, "Trubbish");
     }
     #[test]
+    fn test_gen_5_support_japanese() {
+        let victini = get_by_id(494, Some("jp"));
+        assert_eq!(victini, "ビクティニ");
+    }
+    #[test]
     fn test_gen_6_support_english() {
         let yveltal = get_by_id(717, None);
         assert_eq!(yveltal, "Yveltal");
+    }
+    #[test]
+    fn test_gen_6_support_japanese() {
+        let xerneas = get_by_id(716, Some("jp"));
+        assert_eq!(xerneas, "ゼルネアス");
     }
     #[test]
     fn test_gen_7_support_english() {
