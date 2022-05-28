@@ -135,6 +135,11 @@ pub mod test {
         let calyrex = get_by_id(898, None);
         assert_eq!(calyrex, "Calyrex");
     }
+    #[test]
+    fn test_gen_8_support_japanese() {
+        let sandaconda = get_by_id(844, Some("jp"));
+        assert_eq!(sandaconda, "サダイジャ");
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
