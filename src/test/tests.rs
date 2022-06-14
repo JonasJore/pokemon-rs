@@ -131,6 +131,11 @@ pub mod test {
         assert_eq!(xerneas, "ゼルネアス");
     }
     #[test]
+    fn test_gen_6_support_chinese() {
+        let chespin = get_by_id(650, Some("ch"));
+        assert_eq!(chespin, "哈力栗");
+    }
+    #[test]
     fn test_gen_7_support_english() {
         let melmetal = get_by_id(809, None);
         assert_eq!(melmetal, "Melmetal");
