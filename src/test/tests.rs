@@ -101,6 +101,11 @@ pub mod test {
         assert_eq!(garchomp, "ガブリアス");
     }
     #[test]
+    fn test_gen_4_support_chinese() {
+        let creselia = get_by_id(488, Some("ch"));
+        assert_eq!(creselia, "克雷色利亞");
+    }
+    #[test]
     fn test_gen_5_support_english() {
         let trubbish = get_by_id(568, None);
         assert_eq!(trubbish, "Trubbish");
