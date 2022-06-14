@@ -53,7 +53,7 @@ pokemon_rs::random(Some("jp"));
 | 5 | Unova | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | 6 | Kalos | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | 7 | Alola | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
-| 8 | Galar | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| 8 | Galar | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | 9 | TBA | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
 ## Supported languages

@@ -160,6 +160,11 @@ pub mod test {
         let sandaconda = get_by_id(844, Some("jp"));
         assert_eq!(sandaconda, "サダイジャ");
     }
+    #[test]
+    fn test_gen_8_support_chinese() {
+        let regieleki = get_by_id(894, Some("ch"));
+        assert_eq!(regieleki, "雷吉艾勒奇");
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
