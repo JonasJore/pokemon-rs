@@ -116,6 +116,11 @@ pub mod test {
         assert_eq!(victini, "ビクティニ");
     }
     #[test]
+    fn test_gen_5_support_chinese() {
+        let victini = get_by_id(494, Some("ch"));
+        assert_eq!(victini, "比克提尼");
+    }
+    #[test]
     fn test_gen_6_support_english() {
         let yveltal = get_by_id(717, None);
         assert_eq!(yveltal, "Yveltal");
