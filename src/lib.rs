@@ -8,67 +8,40 @@
 )]
 #![allow(dead_code, non_upper_case_globals)]
 
-use rand::seq::SliceRandom;
-use std::error::Error;
-
+mod constants;
 mod data;
+mod generation;
+mod list;
 
-use data::ch::ch;
-use data::de::de;
-use data::en::en;
-use data::fr::fr;
-use data::jp::jp;
-use data::ru::ru;
+use constants::repo_link;
+use generation::Generation;
+use rand::prelude::SliceRandom;
 
-const repo_issues: &'static str = "https://github.com/JonasJore/pokemon-rs/issues";
-const repo_link: &'static str = "https://github.com/JonasJore/pokemon-rs/";
-
-fn get_translated_list(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Error>> {
-    let language: &str = locale.unwrap_or("en");
-
-    if language == "en" {
-        let english_file = en();
-        return Ok(english_file);
+pub fn get_generation(generation: Generation, locale: Option<&str>) -> Vec<&str> {
+    let pokemon_list = list::get_pokemon(locale).unwrap();
+    match generation {
+        Generation::Kanto => pokemon_list[0..=151].to_vec(),
     }
-
-    let translated_pokemon_list: Vec<&'static str> = match locale {
-        Some("ch") => ch(),
-        Some("de") => de(),
-        Some("en") => en(),
-        Some("fr") => fr(),
-        Some("jp") => jp(),
-        Some("ru") => ru(),
-        _ => panic!(
-            "Language currently not supported. Want support for your language? Pull requests welcome at {}. Or you can just post a feature request as an issue here: {}",
-            repo_link,
-            repo_issues
-        )
-    };
-
-    Ok(translated_pokemon_list)
-}
-fn get_pokemon(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Error>> {
-    get_translated_list(locale)
 }
 pub fn get_all(locale: Option<&str>) -> Vec<&str> {
-    let pokemon_list = get_pokemon(locale);
+    let pokemon_list = list::get_pokemon(locale);
     pokemon_list.unwrap()
 }
 pub fn get_by_id(id: usize, locale: Option<&str>) -> String {
-    let pokemon_list = get_pokemon(locale).unwrap();
+    let pokemon_list = list::get_pokemon(locale).unwrap();
     pokemon_list[id - 1].to_string()
 }
 pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
-    let pokemon_list = get_pokemon(locale).unwrap();
+    let pokemon_list = list::get_pokemon(locale).unwrap();
 
     if !pokemon_list.contains(&name) {
         let list_alternate_locale = match name {
-            name if ch().contains(&name) => ch(),
-            name if de().contains(&name) => de(),
-            name if en().contains(&name) => en(),
-            name if fr().contains(&name) => fr(),
-            name if jp().contains(&name) => jp(),
-            name if ru().contains(&name) => ru(),
+            name if data::ch::ch().contains(&name) => data::ch::ch(),
+            name if data::de::de().contains(&name) => data::de::de(),
+            name if data::en::en().contains(&name) => data::en::en(),
+            name if data::fr::fr().contains(&name) => data::fr::fr(),
+            name if data::jp::jp().contains(&name) => data::jp::jp(),
+            name if data::ru::ru().contains(&name) => data::ru::ru(),
             _ => panic!("The pokémon given does not seem to have been added to the list yet, PRs welcome at {}", repo_link)
         };
 
@@ -86,7 +59,7 @@ pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
         + 1
 }
 pub fn random(locale: Option<&str>) -> String {
-    let pokemon_list = get_pokemon(locale).unwrap().to_owned();
+    let pokemon_list = list::get_pokemon(locale).unwrap().to_owned();
     pokemon_list
         .choose(&mut rand::thread_rng())
         .unwrap()

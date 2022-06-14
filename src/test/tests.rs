@@ -1,7 +1,12 @@
 #[deny(unused_imports)]
 #[cfg(test)]
 pub mod test {
-    use crate::{get_all, get_by_id, get_id_by_name};
+    use crate::{get_all, get_by_id, get_generation, get_id_by_name};
+    use crate::generation;
+
+    fn type_to_string<T>(_: &T) -> String {
+        format!("{}", std::any::type_name::<T>())
+    }
 
     const TOTAL_NUMBER_OF_POKEMON: usize = 898;
 
@@ -188,5 +193,11 @@ pub mod test {
         fn random_should_panic_when_non_supported_language_is_given() {
             random(Some("none-supported locale"));
         }
+    }
+    #[test]
+    fn test_get_all_first_gen_pokemon_as_vector() {
+        let kanto: Vec<&str> = get_generation(generation::Generation::Kanto, Some("en"));
+        assert_eq!(kanto.len(), 152);
+        assert_eq!(type_to_string(&kanto), "alloc::vec::Vec<&str>");
     }
 }
