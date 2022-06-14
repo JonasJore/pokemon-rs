@@ -146,6 +146,11 @@ pub mod test {
         assert_eq!(torracat, "ニャヒート");
     }
     #[test]
+    fn test_gen_7_support_chinese() {
+        let solgaleo = get_by_id(791, Some("ch"));
+        assert_eq!(solgaleo, "索爾迦雷歐");
+    }
+    #[test]
     fn test_gen_8_support_english() {
         let calyrex = get_by_id(898, None);
         assert_eq!(calyrex, "Calyrex");
