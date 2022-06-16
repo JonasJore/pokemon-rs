@@ -2,7 +2,6 @@
 #[cfg(test)]
 pub mod test {
     use crate::{get_all, get_by_id, get_generation, get_id_by_name};
-    use crate::generation;
 
     fn type_to_string<T>(_: &T) -> String {
         format!("{}", std::any::type_name::<T>())
@@ -194,9 +193,19 @@ pub mod test {
             random(Some("none-supported locale"));
         }
     }
+    #[cfg(test)]
+    mod panic_test_generations {
+        use crate::get_generation;
+        #[test]
+        #[should_panic]
+        fn test_get_undefined_generation() {
+            let undefined_gen = get_generation("Awesome Generation", Some("en"));
+            assert_eq!(undefined_gen.is_empty(), false);
+        }
+    }
     #[test]
     fn test_get_all_first_gen_pokemon_as_vector() {
-        let kanto: Vec<&str> = get_generation(generation::Generation::Kanto, Some("en"));
+        let kanto: Vec<&str> = get_generation("Kanto", Some("en"));
         assert_eq!(kanto.len(), 152);
         assert_eq!(type_to_string(&kanto), "alloc::vec::Vec<&str>");
     }
