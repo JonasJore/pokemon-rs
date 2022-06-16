@@ -1,7 +1,7 @@
 use crate::constants::repo_link;
 use crate::data;
+use crate::generation::Generation;
 use crate::list;
-use crate::Generation;
 use rand::prelude::SliceRandom;
 
 /// TODO: denne sjekker ikke for alle generasjoner ennå...

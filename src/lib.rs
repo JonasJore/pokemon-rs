@@ -14,8 +14,6 @@ mod functions;
 mod generation;
 mod list;
 
-use generation::Generation;
-
 pub fn get_generation<'gen_lifetime>(
     generation: &str,
     locale: Option<&'gen_lifetime str>,
