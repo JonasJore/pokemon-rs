@@ -13,6 +13,7 @@ mod data;
 mod functions;
 mod generation;
 mod list;
+mod declarations;
 
 pub fn get_generation<'gen_lifetime>(
     generation: &str,

@@ -2,6 +2,7 @@ use crate::constants::repo_link;
 use crate::data;
 use crate::generation::Generation;
 use crate::list;
+use crate::declarations::vector::Vector::VectorExtension;
 use rand::prelude::SliceRandom;
 
 /// TODO: denne sjekker ikke for alle generasjoner ennå...
@@ -31,7 +32,6 @@ pub fn get_by_id(id: usize, locale: Option<&str>) -> String {
 
 pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
     let pokemon_list = list::get_pokemon(locale).unwrap();
-
     if !pokemon_list.contains(&name) {
         let list_alternate_locale = match name {
             name if data::ch::ch().contains(&name) => data::ch::ch(),
@@ -43,18 +43,10 @@ pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
             _ => panic!("The pokémon given does not seem to have been added to the list yet, PRs welcome at {}", repo_link)
         };
 
-        return list_alternate_locale
-            .iter()
-            .position(|pokemon| pokemon.to_owned() == name)
-            .unwrap()
-            + 1;
+        return list_alternate_locale.get_id(name);
     }
 
-    pokemon_list
-        .iter()
-        .position(|pokemon| pokemon.to_owned() == name)
-        .unwrap()
-        + 1
+    return pokemon_list.get_id(name);
 }
 
 pub fn random(locale: Option<&str>) -> String {
