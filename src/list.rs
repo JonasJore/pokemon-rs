@@ -1,5 +1,5 @@
-use crate::constants::repo_issues;
-use crate::constants::repo_link;
+use crate::constants::REPO_ISSUES;
+use crate::constants::REPO_LINK;
 use crate::data;
 use std::error::Error;
 
@@ -20,8 +20,8 @@ pub fn get_translated_list(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Er
         Some("ru") => data::ru::ru(),
         _ => panic!(
             "Language currently not supported. Want support for your language? Pull requests welcome at {}. Or you can just post a feature request as an issue here: {}",
-            repo_link,
-            repo_issues
+            REPO_LINK,
+            REPO_ISSUES
         )
     };
 

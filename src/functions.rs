@@ -1,28 +1,20 @@
-use crate::constants::repo_link;
+use crate::constants::REPO_LINK;
 use crate::data;
+use crate::declarations::generation::generation::GenerationExtension;
+use crate::declarations::string::string::StringExtension;
+use crate::declarations::vector::vector::VectorExtension;
 use crate::generation::Generation;
 use crate::list;
-use crate::declarations::vector::Vector::VectorExtension;
 use rand::prelude::SliceRandom;
-
-/// TODO: denne sjekker ikke for alle generasjoner ennå...
-fn map_str_to_generation(generation_name: &str) -> Generation {
-    match generation_name {
-        "Kanto" => Generation::Kanto,
-        _ => panic!(""),
-    }
-}
 
 pub fn get_complete_generation<'get_gen_lifetime>(
     generation: &str,
     locale: Option<&'get_gen_lifetime str>,
 ) -> Vec<&'get_gen_lifetime str> {
     let pokemon_list: Vec<&str> = list::get_pokemon(locale).unwrap();
-    let mapped_gen: Generation = map_str_to_generation(generation);
+    let mapped_gen: &Generation = generation.map_str_to_generation();
 
-    match mapped_gen {
-        Generation::Kanto => pokemon_list[0..=151].to_vec(),
-    }
+    mapped_gen.generation_sublist(pokemon_list)
 }
 
 pub fn get_by_id(id: usize, locale: Option<&str>) -> String {
@@ -40,7 +32,7 @@ pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
             name if data::fr::fr().contains(&name) => data::fr::fr(),
             name if data::jp::jp().contains(&name) => data::jp::jp(),
             name if data::ru::ru().contains(&name) => data::ru::ru(),
-            _ => panic!("The pokémon given does not seem to have been added to the list yet, PRs welcome at {}", repo_link)
+            _ => panic!("The pokémon given does not seem to have been added to the list yet, PRs welcome at {}", REPO_LINK)
         };
 
         return list_alternate_locale.get_id(name);

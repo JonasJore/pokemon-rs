@@ -1,4 +1,4 @@
-pub mod Vector {
+pub mod vector {
     pub trait VectorExtension {
         fn get_id(self, name: &str) -> usize;
     }

@@ -1,2 +1,2 @@
-pub const repo_issues: &'static str = "https://github.com/JonasJore/pokemon-rs/issues";
-pub const repo_link: &'static str = "https://github.com/JonasJore/pokemon-rs/";
+pub const REPO_ISSUES: &'static str = "https://github.com/JonasJore/pokemon-rs/issues";
+pub const REPO_LINK: &'static str = "https://github.com/JonasJore/pokemon-rs/";
