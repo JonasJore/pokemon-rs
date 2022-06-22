@@ -15,12 +15,6 @@ mod generation;
 mod list;
 mod declarations;
 
-pub fn get_generation<'gen_lifetime>(
-    generation: &str,
-    locale: Option<&'gen_lifetime str>,
-) -> Vec<&'gen_lifetime str> {
-    functions::get_complete_generation(generation, locale)
-}
 pub fn get_all(locale: Option<&str>) -> Vec<&str> {
     let pokemon_list = list::get_pokemon(locale);
     pokemon_list.unwrap()
@@ -33,6 +27,12 @@ pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
 }
 pub fn random(locale: Option<&str>) -> String {
     functions::random(locale)
+}
+pub fn get_generation<'gen_lifetime>(
+    generation: &str,
+    locale: Option<&'gen_lifetime str>,
+) -> Vec<&'gen_lifetime str> {
+    functions::get_complete_generation(generation, locale)
 }
 
 #[cfg(test)]

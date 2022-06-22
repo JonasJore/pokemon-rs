@@ -28,6 +28,9 @@ pokemon_rs::get_id_by_name("Pikachu", None);
 pokemon_rs::random(None);
 // => Raichu
 
+pokemon_rs::get_generation("Kanto", Some("en"));
+// => ['Bulbasaur', 'Ivysaur', 'Venusaur', ...'Mewtwo', 'Mew']
+
 // There is support for another language than default (None mapped to en) that can be given, like `Some("jp")`):
 pokemon_rs::get_all(Some("jp"));
 // => ['フシギダネ', 'フシギソウ', 'フシギバナ', ...]
@@ -40,6 +43,9 @@ pokemon_rs::get_id_by_name("フシギダネ", Some("jp"))
 
 pokemon_rs::random(Some("jp"));
 // => プリン
+
+pokemon_rs::get_generation("Kanto", Some("en"));
+// => ['フシギダネ', 'フシギソウ', 'フシギバナ', ...'ミュウツー', 'ミュウ']
 ```
 
 ## Supported Pokémon generations and languages
