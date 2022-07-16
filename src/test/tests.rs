@@ -206,7 +206,7 @@ pub mod test {
     #[test]
     fn test_get_all_first_gen_pokemon_as_vector() {
         let kanto: Vec<&str> = get_generation("Kanto", Some("en"));
-        assert_eq!(kanto.len(), 152);
+        assert_eq!(kanto.len(), 151);
         assert_eq!(type_to_string(&kanto), "alloc::vec::Vec<&str>");
     }
     #[test]
