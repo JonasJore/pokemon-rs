@@ -7,7 +7,7 @@ pub mod test {
         format!("{}", std::any::type_name::<T>())
     }
 
-    const TOTAL_NUMBER_OF_POKEMON: usize = 901;
+    const TOTAL_NUMBER_OF_POKEMON: usize = 908;
 
     #[test]
     fn test_get_all() {
@@ -262,7 +262,7 @@ pub mod test {
     #[test]
     #[should_panic]
     fn test_id_to_non_valid_pokemon_will_panic() {
-        get_by_id(906, Some("en"));
+        get_by_id(910, Some("en"));
     }
     #[test]
     #[should_panic]
