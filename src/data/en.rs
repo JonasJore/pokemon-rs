@@ -906,5 +906,15 @@ pub fn en<'pokemon_en>() -> Vec<&'pokemon_en str> {
         "Glastrier",
         "Spectrier",
         "Calyrex",
+        // GEN 9
+        "Sprigatito",
+        "N/A",
+        "N/A",
+        "Fuecoco",
+        "N/A",
+        "N/A",
+        "Quaxly",
+        "N/A",
+        "N/A",
     ]
 }
