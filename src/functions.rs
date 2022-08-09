@@ -13,16 +13,29 @@ pub fn get_complete_generation<'get_gen_lifetime>(
 ) -> Vec<&'get_gen_lifetime str> {
     let pokemon_list: Vec<&str> = list::get_pokemon(locale).unwrap();
     let mapped_gen: &Generation = generation.map_str_to_generation();
+    let valid_pokemon: Vec<&str> = pokemon_list
+        .iter()
+        .filter(|&pokemon| pokemon != &"N/A")
+        .cloned()
+        .collect();
 
-    mapped_gen.generation_sublist(pokemon_list)
+    mapped_gen.generation_sublist(valid_pokemon)
 }
 
 pub fn get_by_id(id: usize, locale: Option<&str>) -> String {
     let pokemon_list = list::get_pokemon(locale).unwrap();
-    pokemon_list[id - 1].to_string()
+    let pokemon_by_id = pokemon_list[id - 1].to_string();
+    if pokemon_by_id == "N/A".to_string() {
+        panic!("Not a valid pokemon");
+    }
+
+    pokemon_by_id
 }
 
 pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
+    if name == "N/A" {
+        panic!("not a valid pokemon");
+    }
     let pokemon_list = list::get_pokemon(locale).unwrap();
     if !pokemon_list.contains(&name) {
         let list_alternate_locale = match name {
@@ -43,9 +56,25 @@ pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
 
 pub fn random(locale: Option<&str>) -> String {
     let pokemon_list = list::get_pokemon(locale).unwrap().to_owned();
-    pokemon_list
+    let valid_pokemon: Vec<&str> = pokemon_list
+        .iter()
+        .filter(|&pokemon| pokemon != &"N/A")
+        .cloned()
+        .collect();
+
+    valid_pokemon
         .choose(&mut rand::thread_rng())
         .unwrap()
         .to_owned()
         .to_string()
+}
+
+pub fn get_all(locale: Option<&str>) -> Vec<&str> {
+    let pokemon_list = list::get_pokemon(locale)
+        .unwrap()
+        .iter()
+        .filter(|&pokemon| pokemon != &"N/A")
+        .cloned()
+        .collect();
+    pokemon_list
 }

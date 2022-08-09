@@ -16,6 +16,7 @@ pub mod string {
                 "Kalos" => &Generation::Kalos,
                 "Alola" => &Generation::Alola,
                 "Galar" => &Generation::Galar,
+                "Paldea" => &Generation::Paldea,
                 _ => panic!(""),
             }
         }

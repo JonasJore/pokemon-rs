@@ -6,7 +6,12 @@ pub mod vector {
     impl VectorExtension for Vec<&str> {
         fn get_id(self, name: &str) -> usize {
             self.iter()
-                .position(|pokemon| pokemon.to_owned() == name)
+                .position(|pokemon| {
+                    if pokemon.to_owned() == "N/A" {
+                        panic!()
+                    }
+                    return pokemon.to_owned() == name;
+                })
                 .unwrap()
                 + 1
         }

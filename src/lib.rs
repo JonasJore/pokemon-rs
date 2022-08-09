@@ -10,14 +10,13 @@
 
 mod constants;
 mod data;
+mod declarations;
 mod functions;
 mod generation;
 mod list;
-mod declarations;
 
 pub fn get_all(locale: Option<&str>) -> Vec<&str> {
-    let pokemon_list = list::get_pokemon(locale);
-    pokemon_list.unwrap()
+    functions::get_all(locale)
 }
 pub fn get_by_id(id: usize, locale: Option<&str>) -> String {
     functions::get_by_id(id, locale)

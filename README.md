@@ -50,6 +50,10 @@ pokemon_rs::get_generation("Kanto", Some("en"));
 
 ## Supported Pokémon generations and languages
 
+✅ = Supported  
+❌ = Not Supported  
+⌛ = Partly Supported
+
 |  Generation | Region | EN(default) | CH | DE | FR | JP | RU |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Kanto | ✅ | ✅ | ✅  | ✅ | ✅ | ✅ |
@@ -60,7 +64,7 @@ pokemon_rs::get_generation("Kanto", Some("en"));
 | 6 | Kalos | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | 7 | Alola | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | 8 | Galar | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
-| 9 | TBA | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 9 | Paldea | ⌛ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
 ## Supported languages
 

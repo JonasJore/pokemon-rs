@@ -7,4 +7,5 @@ pub enum Generation {
     Kalos,
     Alola,
     Galar,
+    Paldea,
 }

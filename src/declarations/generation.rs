@@ -16,6 +16,7 @@ pub mod generation {
                 Generation::Kalos => list[649..=720].to_vec(),
                 Generation::Alola => list[721..=808].to_vec(),
                 Generation::Galar => list[809..=897].to_vec(),
+                Generation::Paldea => list[898..=900].to_vec(),
             }
         }
     }

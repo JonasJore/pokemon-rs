@@ -7,7 +7,7 @@ pub mod test {
         format!("{}", std::any::type_name::<T>())
     }
 
-    const TOTAL_NUMBER_OF_POKEMON: usize = 898;
+    const TOTAL_NUMBER_OF_POKEMON: usize = 901;
 
     #[test]
     fn test_get_all() {
@@ -251,5 +251,22 @@ pub mod test {
         let galar: Vec<&str> = get_generation("Galar", Some("en"));
         assert_eq!(galar.len(), 89);
         assert_eq!(type_to_string(&galar), "alloc::vec::Vec<&str>");
+    }
+    #[test]
+    fn test_get_all_ninth_gen_pokemon_as_vector() {
+        let paldea: Vec<&str> = get_generation("Paldea", Some("en"));
+        assert_eq!(paldea.len(), 3);
+        assert_eq!(type_to_string(&paldea), "alloc::vec::Vec<&str>");
+    }
+
+    #[test]
+    #[should_panic]
+    fn test_id_to_non_valid_pokemon_will_panic() {
+        get_by_id(906, Some("en"));
+    }
+    #[test]
+    #[should_panic]
+    fn test_asking_for_non_valid_pokemon_will_panic() {
+        get_id_by_name("N/A", Some("en"));
     }
 }
