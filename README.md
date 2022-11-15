@@ -44,7 +44,7 @@ pokemon_rs::get_id_by_name("フシギダネ", Some("jp"))
 pokemon_rs::random(Some("jp"));
 // => プリン
 
-pokemon_rs::get_generation("Kanto", Some("en"));
+pokemon_rs::get_generation("Kanto", Some("jp"));
 // => ['フシギダネ', 'フシギソウ', 'フシギバナ', ...'ミュウツー', 'ミュウ']
 ```
 
