@@ -1,4 +1,4 @@
-pub fn generation_nine_early_days_warning() {
+fn generation_nine_early_days_warning() {
     println!("This is early days for gen 9. Lists will change as more information becomes available");
     println!("Some names for generation 9 Pokemon, may be incorrect due to inaccurate translation or incorrect name");
 }
