@@ -254,13 +254,13 @@ pub mod test {
     #[test]
     fn test_get_all_eight_gen_pokemon_as_vector() {
         let galar: Vec<&str> = get_generation("Galar", Some("en"));
-        assert_eq!(galar.len(), 89);
+        assert_eq!(galar.len(), 96);
         assert_eq!(type_to_string(&galar), "alloc::vec::Vec<&str>");
     }
     #[test]
     fn test_get_all_ninth_gen_pokemon_as_vector() {
         let paldea: Vec<&str> = get_generation("Paldea", Some("en"));
-        assert_eq!(paldea.len(), 3);
+        assert_eq!(paldea.len(), 103);
         assert_eq!(type_to_string(&paldea), "alloc::vec::Vec<&str>");
     }
     #[test]
