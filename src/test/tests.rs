@@ -7,7 +7,7 @@ pub mod test {
         format!("{}", std::any::type_name::<T>())
     }
 
-    const TOTAL_NUMBER_OF_POKEMON: usize = 908;
+    const TOTAL_NUMBER_OF_POKEMON: usize = 1008;
 
     #[test]
     fn test_get_all() {
@@ -169,6 +169,11 @@ pub mod test {
         let regieleki = get_by_id(894, Some("ch"));
         assert_eq!(regieleki, "雷吉艾勒奇");
     }
+    #[test]
+    fn test_gen_9_support_english() {
+        let sprigatito = get_by_id(906, None);
+        assert_eq!(sprigatito, "Sprigatito");
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
@@ -257,12 +262,6 @@ pub mod test {
         let paldea: Vec<&str> = get_generation("Paldea", Some("en"));
         assert_eq!(paldea.len(), 3);
         assert_eq!(type_to_string(&paldea), "alloc::vec::Vec<&str>");
-    }
-
-    #[test]
-    #[should_panic]
-    fn test_id_to_non_valid_pokemon_will_panic() {
-        get_by_id(910, Some("en"));
     }
     #[test]
     #[should_panic]
