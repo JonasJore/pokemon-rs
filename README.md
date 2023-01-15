@@ -1,8 +1,11 @@
 # pokemon-rs
 
 ![crates version](https://img.shields.io/crates/v/pokemon-rs.svg?style=flat-square)
+![repos size](https://img.shields.io/github/repo-size/jonasjore/pokemon-rs)
 ![docs build](https://img.shields.io/docsrs/pokemon-rs)
-
+![downloads](https://img.shields.io/crates/d/pokemon-rs)
+![recent downloads](https://img.shields.io/crates/dr/pokemon-rs)
+![downloads latest version](https://img.shields.io/crates/dv/pokemon-rs)
 ## Description
 
 Rust library for getting Pokémon names
