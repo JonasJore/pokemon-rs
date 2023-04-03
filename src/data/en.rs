@@ -1,3 +1,4 @@
+
 pub fn en<'pokemon_en>() -> Vec<&'pokemon_en str> {
     vec![
         // GEN 1

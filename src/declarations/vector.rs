@@ -7,7 +7,7 @@ pub mod vector {
         fn get_id(self, name: &str) -> usize {
             self.iter()
                 .position(|pokemon| {
-                    if pokemon.to_owned() == "N/A" {
+                    if &pokemon.to_owned() == &"N/A" {
                         panic!()
                     }
                     return pokemon.to_owned() == name;
