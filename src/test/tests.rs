@@ -206,7 +206,7 @@ pub mod test {
     fn test_gen_9_support_english() {
         let sprigatito = get_by_id(906, None);
         assert_eq!(sprigatito, "Sprigatito");
-        let sprigatito_id_by_name = get_id_by_name("Sprigatito", Some("de"));
+        let sprigatito_id_by_name = get_id_by_name("Sprigatito", None);
         assert_eq!(906, sprigatito_id_by_name);
     }
     #[test]
