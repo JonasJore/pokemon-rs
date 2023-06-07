@@ -174,6 +174,13 @@ pub mod test {
         assert_eq!(solgaleo, "索爾迦雷歐");
     }
     #[test]
+    fn test_gen_7_support_german() {
+        let agoyon = get_by_id(804, Some("de"));
+        assert_eq!(agoyon, "Agoyon");
+        let agoyon_id_by_name = get_id_by_name("Agoyon", Some("de"));
+        assert_eq!(804, agoyon_id_by_name);
+    }
+    #[test]
     fn test_gen_8_support_english() {
         let calyrex = get_by_id(898, None);
         assert_eq!(calyrex, "Calyrex");
