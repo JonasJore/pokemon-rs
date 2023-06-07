@@ -130,6 +130,13 @@ pub mod test {
         assert_eq!(victini, "比克提尼");
     }
     #[test]
+    fn test_gen_5_support_german() {
+        let skallyk = get_by_id(629, Some("de"));
+        assert_eq!(skallyk, "Skallyk");
+        let skallyk_id_by_name = get_id_by_name("Skallyk", Some("de"));
+        assert_eq!(629, skallyk_id_by_name);
+    }
+    #[test]
     fn test_gen_6_support_english() {
         let yveltal = get_by_id(717, None);
         assert_eq!(yveltal, "Yveltal");
