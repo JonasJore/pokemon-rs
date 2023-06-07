@@ -67,7 +67,7 @@ pokemon_rs::get_generation("Kanto", Some("jp"));
 | 6 | Kalos | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
 | 7 | Alola | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
 | 8 | Galar | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
-| 9 | Paldea | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 9 | Paldea | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
 
 ## Supported languages
 
