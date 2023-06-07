@@ -196,9 +196,25 @@ pub mod test {
         assert_eq!(regieleki, "雷吉艾勒奇");
     }
     #[test]
+    fn test_gen_8_support_german() {
+        let chimstix = get_by_id(811, Some("de"));
+        assert_eq!(chimstix, "Chimstix");
+        let chimstix_id_by_name = get_id_by_name("Chimstix", Some("de"));
+        assert_eq!(811, chimstix_id_by_name);
+    }
+    #[test]
     fn test_gen_9_support_english() {
         let sprigatito = get_by_id(906, None);
         assert_eq!(sprigatito, "Sprigatito");
+        let sprigatito_id_by_name = get_id_by_name("Sprigatito", Some("de"));
+        assert_eq!(906, sprigatito_id_by_name);
+    }
+    #[test]
+    fn test_gen_9_support_german() {
+        let eisenkrieger = get_by_id(1006, Some("de"));
+        assert_eq!("Eisenkrieger", eisenkrieger);
+        let eisenkrieger_id_by_name = get_id_by_name("Eisenkrieger", Some("de"));
+        assert_eq!(1006, eisenkrieger_id_by_name);
     }
     #[cfg(test)]
     mod panic_tests {
