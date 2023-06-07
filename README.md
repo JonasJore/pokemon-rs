@@ -64,7 +64,7 @@ pokemon_rs::get_generation("Kanto", Some("jp"));
 | 3 | Hoenn | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 4 | Sinnoh | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
 | 5 | Unova | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
-| 6 | Kalos | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
+| 6 | Kalos | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
 | 7 | Alola | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | 8 | Galar | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | 9 | Paldea | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
