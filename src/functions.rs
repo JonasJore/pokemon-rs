@@ -76,3 +76,20 @@ pub fn get_all(locale: Option<&str>) -> Vec<&str> {
 
     return pokemon_list;
 }
+
+pub fn get_region_by_generation(id: usize) -> String {
+    let gen: Generation = match id {
+        1 => Generation::Kanto,
+        2 => Generation::Johto,
+        3 => Generation::Hoenn,
+        4 => Generation::Sinnoh,
+        5 => Generation::Unova,
+        6 => Generation::Kalos,
+        7 => Generation::Alola,
+        8 => Generation::Galar,
+        9 => Generation::Paldea,
+        _ => panic!("Invalid input")
+    };
+
+    return gen.to_string();
+}

@@ -1,7 +1,9 @@
 #[deny(unused_imports)]
 #[cfg(test)]
 pub mod test {
-    use crate::{get_all, get_by_id, get_generation, get_id_by_name};
+    use crate::{
+        get_all, get_by_id, get_generation, get_id_by_name, get_region,
+    };
 
     fn type_to_string<T>(_: &T) -> String {
         format!("{}", std::any::type_name::<T>())
@@ -223,6 +225,20 @@ pub mod test {
         let eisenkrieger_id_by_name = get_id_by_name("Eisenkrieger", Some("de"));
         assert_eq!(1006, eisenkrieger_id_by_name);
     }
+    #[test]
+    fn test_gen_2_should_get_Johto_as_string() {
+        let johto = get_region(2);
+        assert_eq!("Johto", johto);
+    }
+    #[test]
+    fn test_verify_all_nine_regions_works() {
+        let mut vec: Vec<String> = vec![];
+        let range = 1..10;
+        let start = range.start as usize;
+        let end = range.end as usize;
+        let all_regions = (start..end).map(|f| vec.push(get_region(f)));
+        assert_eq!(9, all_regions.len());
+    }
     #[cfg(test)]
     mod panic_tests {
         use crate::{get_all, get_by_id, get_id_by_name, random};
@@ -316,5 +332,15 @@ pub mod test {
     #[should_panic]
     fn test_asking_for_non_valid_pokemon_will_panic() {
         get_id_by_name("N/A", Some("en"));
+    }
+    #[test]
+    #[should_panic]
+    fn test_invalid_id_for_generation_should_throw_panic() {
+        get_region(0);
+    }
+    #[test]
+    #[should_panic]
+    fn test_really_high_id_for_generation_should_throw_panic() {
+        get_region(100);
     }
 }
