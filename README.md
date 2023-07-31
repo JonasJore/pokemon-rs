@@ -12,8 +12,6 @@ Rust library for getting Pokémon names
 
 PRs for adding support for more translated Pokémon generations welcome
   
-Inspired by [Pokémon](https://github.com/sindresorhus/pokemon)  
-  
 ## Usage
 
 ```rust
