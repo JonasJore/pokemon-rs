@@ -47,6 +47,9 @@ pokemon_rs::random(Some("jp"));
 
 pokemon_rs::get_generation("Kanto", Some("jp"));
 // => ['フシギダネ', 'フシギソウ', 'フシギバナ', ...'ミュウツー', 'ミュウ']
+
+pokemon_rs::get_region(4);
+// => Sinnoh
 ```
 
 ## Supported Pokémon generations and languages
