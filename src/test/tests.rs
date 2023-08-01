@@ -38,7 +38,6 @@ fn test_get_all_fourth_gen_pokemon_as_vector() {
 #[test]
 fn test_get_all_fifth_gen_pokemon_as_vector() {
     let unova: Vec<&str> = get_generation("Unova", Some("en"));
-    println!("{:?}", unova);
     assert_eq!(unova.len(), 156);
     assert_eq!(type_to_string(&unova), "alloc::vec::Vec<&str>");
 }

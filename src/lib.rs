@@ -27,10 +27,7 @@ pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
 pub fn random(locale: Option<&str>) -> String {
     functions::random(locale)
 }
-pub fn get_generation<'a>(
-    generation: &str,
-    locale: Option<&'a str>,
-) -> Vec<&'a str> {
+pub fn get_generation<'a>(generation: &str, locale: Option<&'a str>) -> Vec<&'a str> {
     functions::get_complete_generation(generation, locale)
 }
 pub fn get_region(generation_number: usize) -> String {
