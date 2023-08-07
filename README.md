@@ -39,7 +39,7 @@ pokemon_rs::get_all(Some("jp"));
 pokemon_rs::get_by_id(33, Some("jp"));
 // => ニドリーノ
 
-pokemon_rs::get_id_by_name("フシギダネ", Some("jp"))
+pokemon_rs::get_id_by_name("フシギダネ", Some("jp"));
 // => 1
 
 pokemon_rs::random(Some("jp"));
