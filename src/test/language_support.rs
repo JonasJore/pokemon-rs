@@ -216,6 +216,15 @@ fn test_gen_8_support_german() {
     assert_eq!(811, chimstix_id_by_name);
 }
 #[test]
+fn test_gen_8_support_french() {
+    let enamorus = get_by_id(905, Some("fr"));
+    assert_eq!(enamorus, "Enamorus");
+    let corayome = get_by_id(864, Some("fr"));
+    assert_eq!(corayome, "Corayôme");
+    let enamorus_id_by_name = get_id_by_name("Enamorus", Some("fr"));
+    assert_eq!(905, enamorus_id_by_name);
+}
+#[test]
 fn test_gen_9_support_english() {
     let sprigatito = get_by_id(906, None);
     assert_eq!(sprigatito, "Sprigatito");

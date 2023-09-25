@@ -67,7 +67,7 @@ pokemon_rs::get_region(4);
 | 5 | Unova | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
 | 6 | Kalos | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
 | 7 | Alola | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
-| 8 | Galar | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| 8 | Galar | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
 | 9 | Paldea | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
 
 ## Supported languages
