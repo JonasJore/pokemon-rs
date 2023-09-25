@@ -218,10 +218,10 @@ fn test_gen_8_support_german() {
 #[test]
 fn test_gen_8_support_french() {
     let enamorus = get_by_id(905, Some("fr"));
-    assert_eq!(enamorus, "Enamorus");
+    assert_eq!(enamorus, "Amovénus");
     let corayome = get_by_id(864, Some("fr"));
     assert_eq!(corayome, "Corayôme");
-    let enamorus_id_by_name = get_id_by_name("Enamorus", Some("fr"));
+    let enamorus_id_by_name = get_id_by_name("Amovénus", Some("fr"));
     assert_eq!(905, enamorus_id_by_name);
 }
 #[test]

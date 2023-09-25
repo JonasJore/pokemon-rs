@@ -908,10 +908,10 @@ pub fn fr<'pokemon_fr>() -> Vec<&'pokemon_fr str> {
         "Sylveroy",
         "Cerbyllin",
         "Hachécateur",
-        "Ursaluna",
+        "Ursaking",
         "Paragruel",
-        "Hisuisneige",
-        "Qwilfish d'Hisui",
-        "Enamorus",
+        "Farfurex",
+        "Qwilpik",
+        "Amovénus",
     ]
 }
