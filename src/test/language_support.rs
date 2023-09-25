@@ -187,6 +187,12 @@ fn test_gen_7_support_german() {
     let agoyon_id_by_name = get_id_by_name("Agoyon", Some("de"));
     assert_eq!(804, agoyon_id_by_name);
 }
+fn test_gen_7_support_french() {
+    let effleche = get_by_id(723, Some("fr"));
+    assert_eq!(effleche, "Efflèche");
+    let effleche_id_by_name = get_id_by_name("Efflèche", Some("fr"));
+    assert_eq!(723, effleche_id_by_name);
+}
 #[test]
 fn test_gen_8_support_english() {
     let calyrex = get_by_id(898, None);
