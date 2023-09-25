@@ -159,6 +159,13 @@ fn test_gen_6_support_german() {
     assert_eq!(viscora_by_name, 704);
 }
 #[test]
+fn test_gen_6_support_french() {
+    let brocelome = get_by_id(708, Some("fr"));
+    assert_eq!(brocelome, "Brocélôme");
+    let brocelome_by_name = get_id_by_name("Brocélôme", Some("fr"));
+    assert_eq!(brocelome_by_name, 708);
+}
+#[test]
 fn test_gen_7_support_english() {
     let melmetal = get_by_id(809, None);
     assert_eq!(melmetal, "Melmetal");
