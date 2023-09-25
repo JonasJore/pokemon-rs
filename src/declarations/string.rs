@@ -17,7 +17,7 @@ pub mod string {
                 "Alola" => &Generation::Alola,
                 "Galar" => &Generation::Galar,
                 "Paldea" => &Generation::Paldea,
-                _ => panic!(""),
+                _ => panic!("Generation name: {} is not supported", self),
             }
         }
     }
