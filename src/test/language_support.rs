@@ -130,6 +130,13 @@ use crate::{ get_by_id, get_id_by_name };
         assert_eq!(629, skallyk_id_by_name);
     }
     #[test]
+    fn test_gen_5_support_french() {
+      let gueriaigle = get_by_id(628, Some("fr"));
+      assert_eq!(gueriaigle, "Gueriaigle");
+      let gueriaigle_id_by_name = get_id_by_name("Gueriaigle", Some("de"));
+        assert_eq!(628, gueriaigle_id_by_name);
+    }
+    #[test]
     fn test_gen_6_support_english() {
         let yveltal = get_by_id(717, None);
         assert_eq!(yveltal, "Yveltal");
