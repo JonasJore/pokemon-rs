@@ -232,6 +232,14 @@ fn test_gen_9_support_english() {
     assert_eq!(906, sprigatito_id_by_name);
 }
 #[test]
+fn test_gen_9_support_japanese() {
+    let sprigatito = get_by_id(906, Some("jp"));
+                          //  "ニャオハ"
+    assert_eq!(sprigatito, "ニャオハ");
+    let sprigatito_id_by_name = get_id_by_name("ニャオハ", Some("jp"));
+    assert_eq!(906, sprigatito_id_by_name);
+}
+#[test]
 fn test_gen_9_support_german() {
     let eisenkrieger = get_by_id(1006, Some("de"));
     assert_eq!("Eisenkrieger", eisenkrieger);
