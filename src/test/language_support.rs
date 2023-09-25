@@ -238,3 +238,10 @@ fn test_gen_9_support_german() {
     let eisenkrieger_id_by_name = get_id_by_name("Eisenkrieger", Some("de"));
     assert_eq!(1006, eisenkrieger_id_by_name);
 }
+#[test]
+fn test_gen_9_support_french() {
+    let miraidon = get_by_id(1008, Some("fr"));
+    assert_eq!("Miraidon", miraidon);
+    let miraidon_id_by_name = get_id_by_name("Miraidon", Some("fr"));
+    assert_eq!(1008, miraidon_id_by_name);
+}

@@ -68,7 +68,7 @@ pokemon_rs::get_region(4);
 | 6 | Kalos | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
 | 7 | Alola | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
 | 8 | Galar | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
-| 9 | Paldea | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
+| 9 | Paldea | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ |
 
 ## Supported languages
 
