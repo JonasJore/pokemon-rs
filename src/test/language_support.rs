@@ -107,6 +107,12 @@ fn test_gen_4_support_french() {
     let rhinastock_id_by_name = get_id_by_name("Rhinastoc", Some("fr"));
     assert_eq!(464, rhinastock_id_by_name);
 }
+fn test_gen_4_support_russian() {
+    let arceus = get_by_id(493, Some("ru"));
+    assert_eq!(arceus, "Аркеус");
+    let arceus_id_by_name = get_id_by_name("Аркеус", Some("ru"));
+    assert_eq!(493, arceus_id_by_name);
+}
 #[test]
 fn test_gen_5_support_english() {
     let trubbish = get_by_id(568, None);
