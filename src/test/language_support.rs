@@ -252,6 +252,16 @@ fn test_gen_8_support_french() {
     assert_eq!(905, enamorus_id_by_name);
 }
 #[test]
+fn test_gen_8_support_russian() {
+    let enamorus = get_by_id(905, Some("ru"));
+    assert_eq!(enamorus, "Энаморус");
+    let corayome = get_by_id(864, Some("ru"));
+    assert_eq!(corayome, "Курсола");
+    let enamorus_id_by_name = get_id_by_name("Энаморус", Some("ru"));
+    assert_eq!(905, enamorus_id_by_name);
+}
+
+#[test]
 fn test_gen_9_support_english() {
     let sprigatito = get_by_id(906, None);
     assert_eq!(sprigatito, "Sprigatito");
