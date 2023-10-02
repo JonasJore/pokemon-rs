@@ -180,6 +180,13 @@ fn test_gen_6_support_french() {
     assert_eq!(brocelome_by_name, 708);
 }
 #[test]
+fn test_gen_6_support_russian() {
+    let yveltal = get_by_id(717, Some("ru"));
+    assert_eq!(yveltal, "Ивелтал");
+    let yveltal_id_by_name = get_id_by_name("Ивелтал", Some("ru"));
+    assert_eq!(yveltal_id_by_name, 717);
+}
+#[test]
 fn test_gen_7_support_english() {
     let melmetal = get_by_id(809, None);
     assert_eq!(melmetal, "Melmetal");
@@ -248,7 +255,7 @@ fn test_gen_9_support_english() {
 #[test]
 fn test_gen_9_support_japanese() {
     let sprigatito = get_by_id(906, Some("jp"));
-                          //  "ニャオハ"
+    //  "ニャオハ"
     assert_eq!(sprigatito, "ニャオハ");
     let sprigatito_id_by_name = get_id_by_name("ニャオハ", Some("jp"));
     assert_eq!(906, sprigatito_id_by_name);
