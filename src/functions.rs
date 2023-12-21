@@ -88,8 +88,17 @@ pub fn get_region_by_generation(id: usize) -> String {
         7 => Generation::Alola,
         8 => Generation::Galar,
         9 => Generation::Paldea,
-        _ => panic!("Invalid input")
+        _ => panic!("Invalid input"),
     };
 
     return gen.to_string();
+}
+
+// TODO: need support for generations in different locales
+pub fn get_all_regions() -> Vec<String> {
+    let all_regions = (1..=9)
+        .map(|x| get_region_by_generation(x))
+        .collect::<Vec<String>>();
+
+    return all_regions;
 }
