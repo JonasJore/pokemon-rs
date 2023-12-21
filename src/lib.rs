@@ -33,6 +33,9 @@ pub fn get_generation<'a>(generation: &str, locale: Option<&'a str>) -> Vec<&'a 
 pub fn get_region(generation_number: usize) -> String {
     functions::get_region_by_generation(generation_number)
 }
+pub fn get_all_regions() -> Vec<String> {
+    functions::get_all_regions()
+}
 
 #[cfg(test)]
 mod test;
