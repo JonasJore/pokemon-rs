@@ -15,6 +15,17 @@ mod functions;
 mod generation;
 mod list;
 
+/// Returns a list of all Pokémons from all generations
+///
+/// # Arguments
+/// * `locale` - An Optional with a string slice that holds the language  
+/// you would like the Pokémon names should be translated in
+///
+/// # Example
+/// ```
+/// pokemon_rs::get_all(Some("en"));
+/// // => ['Bulbasaur', 'Ivysaur', 'Venusaur', ...]
+/// ```
 pub fn get_all(locale: Option<&str>) -> Vec<&str> {
     functions::get_all(locale)
 }
