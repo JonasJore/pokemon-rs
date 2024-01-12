@@ -18,17 +18,30 @@ mod list;
 /// Returns a list of all Pokémons from all generations
 ///
 /// # Arguments
-/// * `locale` - An Optional with a string slice that holds the language  
+/// `locale` - `Option<&str>` that holds the language  
 /// you would like the Pokémon names should be translated in
 ///
 /// # Example
 /// ```
-/// pokemon_rs::get_all(Some("en"));
-/// // => ['Bulbasaur', 'Ivysaur', 'Venusaur', ...]
+/// // default language is english so providing None is the same as providing `Some("en")`
+/// pokemon_rs::get_all(None);
+/// pokemon_rs::get_all(Some("jp"));
 /// ```
 pub fn get_all(locale: Option<&str>) -> Vec<&str> {
     functions::get_all(locale)
 }
+/// Returns the Pokémon as String that corresponds given id
+///
+/// # Arguments
+/// `id` - `usize` that represents the official Pokémon id, used find the correct Pokémon
+/// `locale` - `Option<&str>` that holds the language
+///
+/// # Example
+/// ```
+/// // default language is english so providing None is the same as providing `Some("en")`
+/// pokemon_rs::get_by_id(1, Some("jp"));
+/// pokemon_rs::get_by_id(24, None);
+/// ```
 pub fn get_by_id(id: usize, locale: Option<&str>) -> String {
     functions::get_by_id(id, locale)
 }
