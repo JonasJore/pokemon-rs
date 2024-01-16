@@ -77,6 +77,19 @@ pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
 pub fn random(locale: Option<&str>) -> String {
     functions::random(locale)
 }
+/// Returns a whole generation as a sorted `Vector<&str>` based on its given region name
+///
+/// # Arguments
+///
+/// `generation` - `&str` that represents the generation (or region) name you would like to get.  
+/// `locale` - `Option<&str>` that represents which language you would like the Pokémon names in returned generation in.
+///
+/// # Example
+/// ```rs
+/// // default language is english so providing None is the same as providing `Some("en")`
+/// pokemon_rs::get_generation("Kanto", None);
+/// pokemon_rs::get_generation("Kanto", Some("jp"));
+/// ```
 pub fn get_generation<'a>(generation: &str, locale: Option<&'a str>) -> Vec<&'a str> {
     functions::get_complete_generation(generation, locale)
 }
