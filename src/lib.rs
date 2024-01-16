@@ -93,6 +93,18 @@ pub fn random(locale: Option<&str>) -> String {
 pub fn get_generation<'a>(generation: &str, locale: Option<&'a str>) -> Vec<&'a str> {
     functions::get_complete_generation(generation, locale)
 }
+/// Returns region name from generation number in released order.  
+/// Kanto = 1, Johto = 2, Hoenn = 3 ...
+///
+/// # Arguments
+///
+/// `generation_number` - `usize`
+///
+/// # Example
+/// ```rs
+/// pokemon_rs::get_region(1)
+/// pokemon_rs::get_region(9)
+/// ```
 pub fn get_region(generation_number: usize) -> String {
     functions::get_region_by_generation(generation_number)
 }
