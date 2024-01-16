@@ -75,7 +75,7 @@ pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
 /// pokemon_rs::random(Some("jp"));
 /// ```
 pub fn random(locale: Option<&str>) -> String {
-    functions::random(locale)
+    functions::random(locale).unwrap()
 }
 /// Returns a whole generation as a sorted `Vector<&str>` based on its given region name
 ///

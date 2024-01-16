@@ -51,19 +51,12 @@ pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
     return pokemon_list.get_id(name);
 }
 
-pub fn random(locale: Option<&str>) -> String {
-    let pokemon_list = list::get_pokemon(locale).unwrap().to_owned();
-    let valid_pokemon: Vec<&str> = pokemon_list
-        .iter()
-        .filter(|&&pokemon| pokemon != "N/A")
-        .cloned()
-        .collect();
+pub fn random(locale: Option<&str>) -> Option<String> {
+    let pokemon_list = list::get_pokemon(locale).unwrap();
 
-    return valid_pokemon
+    return pokemon_list
         .choose(&mut rand::thread_rng())
-        .unwrap()
-        .to_owned()
-        .to_string();
+        .map(|&chosen_pokemon| chosen_pokemon.to_string());
 }
 
 pub fn get_all(locale: Option<&str>) -> Vec<&str> {
