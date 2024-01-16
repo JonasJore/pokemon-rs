@@ -45,6 +45,19 @@ pub fn get_all(locale: Option<&str>) -> Vec<&str> {
 pub fn get_by_id(id: usize, locale: Option<&str>) -> String {
     functions::get_by_id(id, locale)
 }
+/// Returns the Pokémon's id that corresponds to a given id
+///
+/// # Arguments
+///
+/// `name` - `&str` that represents the Pokémon you'd like to lookup id for.  
+/// `locale` - `Option<&str>` that holds the language you are searching for Pokémon id in.
+/// # Example
+/// ```rs
+/// // default language is english so providing None is the same as providing `Some("en")`
+/// pokemon_rs::get_id_by_name("Pikachu", None);
+/// pokemon_rs::get_id_by_name("フシギダネ", Some("jp"));
+/// ```
+///
 pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
     functions::get_id_by_name(name, locale)
 }
