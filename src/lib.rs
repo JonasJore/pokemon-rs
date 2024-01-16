@@ -51,6 +51,7 @@ pub fn get_by_id(id: usize, locale: Option<&str>) -> String {
 ///
 /// `name` - `&str` that represents the Pokémon you'd like to lookup id for.  
 /// `locale` - `Option<&str>` that holds the language you are searching for Pokémon id in.
+///
 /// # Example
 /// ```rs
 /// // default language is english so providing None is the same as providing `Some("en")`
@@ -61,6 +62,18 @@ pub fn get_by_id(id: usize, locale: Option<&str>) -> String {
 pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
     functions::get_id_by_name(name, locale)
 }
+/// Returns a random Pokémon out of all Pokémon released to this day
+///
+/// # Arguments
+///
+/// `locale` - `Option<&str>` that holds the language
+///
+/// # Example
+/// ```rs
+/// // default language is english so providing None is the same as providing `Some("en")`
+/// pokemon_rs::random(None);
+/// pokemon_rs::random(Some("jp"));
+/// ```
 pub fn random(locale: Option<&str>) -> String {
     functions::random(locale)
 }
