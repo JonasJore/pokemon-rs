@@ -5,6 +5,7 @@ use crate::declarations::string::string::StringExtension;
 use crate::declarations::vector::vector::VectorExtension;
 use crate::generation::Generation;
 use crate::list;
+
 use rand::prelude::SliceRandom;
 
 pub fn get_complete_generation<'a>(generation: &str, locale: Option<&'a str>) -> Vec<&'a str> {
