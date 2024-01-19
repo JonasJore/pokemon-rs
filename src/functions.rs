@@ -61,14 +61,11 @@ pub fn random(locale: Option<&str>) -> Option<String> {
 }
 
 pub fn get_all(locale: Option<&str>) -> Vec<&str> {
-    let pokemon_list = list::get_pokemon(locale)
-        .unwrap()
+    list::get_pokemon(locale)
+        .unwrap_or_default()
         .iter()
-        .filter(|&&pokemon| pokemon != "N/A")
         .cloned()
-        .collect();
-
-    return pokemon_list;
+        .collect()
 }
 
 pub fn get_region_by_generation(id: usize) -> String {
