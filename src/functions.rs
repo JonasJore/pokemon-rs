@@ -9,31 +9,21 @@ use crate::list;
 use rand::prelude::SliceRandom;
 
 pub fn get_complete_generation<'a>(generation: &str, locale: Option<&'a str>) -> Vec<&'a str> {
-    let pokemon_list: Vec<&str> = list::get_pokemon(locale).unwrap();
+    let pokemon_list: Vec<&'a str> = list::get_pokemon(locale).unwrap_or_default();
     let mapped_gen: &Generation = generation.map_str_to_generation();
-    let valid_pokemon: Vec<&str> = pokemon_list
-        .iter()
-        .filter(|&&pokemon| pokemon != "N/A")
-        .cloned()
-        .collect();
+    let valid_pokemon: Vec<&'a str> = pokemon_list.into_iter().collect();
 
-    return mapped_gen.generation_sublist(valid_pokemon);
+    mapped_gen.generation_sublist(valid_pokemon)
 }
 
+// TODO: cover id being out of bounds, and introduce Option as return, also update tests accordingly
 pub fn get_by_id(id: usize, locale: Option<&str>) -> String {
-    let pokemon_list = list::get_pokemon(locale).unwrap();
-    let pokemon_by_id = pokemon_list[id - 1].to_string();
-    if pokemon_by_id == "N/A".to_string() {
-        panic!("Not a valid pokemon");
-    }
+    let pokemon_list = list::get_pokemon(locale).unwrap_or_default();
+    pokemon_list[id - 1].to_string()
 
-    return pokemon_by_id;
 }
 
 pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
-    if name == "N/A" {
-        panic!("not a valid pokemon");
-    }
     let pokemon_list = list::get_pokemon(locale).unwrap();
     if !pokemon_list.contains(&name) {
         let list_alternate_locale = match name {
