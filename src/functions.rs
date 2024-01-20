@@ -77,6 +77,6 @@ pub fn get_region_by_generation(id: usize) -> String {
 // TODO: need support for generations in different locales
 pub fn get_all_regions() -> Vec<String> {
     (1..=9)
-        .map(|regionId| get_region_by_generation(regionId))
+        .map(|region_id| get_region_by_generation(region_id))
         .collect::<Vec<String>>()
 }
