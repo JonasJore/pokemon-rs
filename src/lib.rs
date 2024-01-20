@@ -22,7 +22,7 @@ mod list;
 /// you would like the Pokémon names should be translated in
 ///
 /// # Example
-/// ```
+/// ```rs
 /// // default language is english so providing None is the same as providing `Some("en")`
 /// pokemon_rs::get_all(None);
 /// pokemon_rs::get_all(Some("jp"));
@@ -30,19 +30,19 @@ mod list;
 pub fn get_all(locale: Option<&str>) -> Vec<&str> {
     functions::get_all(locale)
 }
-/// Returns the Pokémon as String that corresponds given id
+/// Returns the Pokémon as a &str that corresponds given id
 ///
 /// # Arguments
 /// `id` - `usize` that represents the official Pokémon id, used find the correct Pokémon
 /// `locale` - `Option<&str>` that holds the language
 ///
 /// # Example
-/// ```
+/// ```rs
 /// // default language is english so providing None is the same as providing `Some("en")`
 /// pokemon_rs::get_by_id(1, Some("jp"));
 /// pokemon_rs::get_by_id(24, None);
 /// ```
-pub fn get_by_id(id: usize, locale: Option<&str>) -> String {
+pub fn get_by_id(id: usize, locale: Option<&str>) -> &str {
     functions::get_by_id(id, locale)
 }
 /// Returns the Pokémon's id that corresponds to a given id

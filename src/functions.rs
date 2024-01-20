@@ -17,10 +17,9 @@ pub fn get_complete_generation<'a>(generation: &str, locale: Option<&'a str>) ->
 }
 
 // TODO: cover id being out of bounds, and introduce Option as return, also update tests accordingly
-pub fn get_by_id(id: usize, locale: Option<&str>) -> String {
+pub fn get_by_id(id: usize, locale: Option<&str>) -> &str {
     let pokemon_list = list::get_pokemon(locale).unwrap_or_default();
-    pokemon_list[id - 1].to_string()
-
+    pokemon_list[id - 1]
 }
 
 pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
@@ -77,9 +76,7 @@ pub fn get_region_by_generation(id: usize) -> String {
 
 // TODO: need support for generations in different locales
 pub fn get_all_regions() -> Vec<String> {
-    let all_regions = (1..=9)
-        .map(|x| get_region_by_generation(x))
-        .collect::<Vec<String>>();
-
-    return all_regions;
+    (1..=9)
+        .map(|regionId| get_region_by_generation(regionId))
+        .collect::<Vec<String>>()
 }
