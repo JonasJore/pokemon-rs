@@ -1,3 +1,5 @@
+use std::fmt::{Display, Formatter, Result};
+
 pub enum Generation {
     Kanto,
     Johto,
@@ -10,8 +12,8 @@ pub enum Generation {
     Paldea,
 }
 
-impl std::fmt::Display for Generation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl Display for Generation {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
         let gen_str = match self {
             Generation::Kanto => "Kanto",
             Generation::Johto => "Johto",

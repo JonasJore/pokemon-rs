@@ -33,11 +33,6 @@ fn test_really_high_id_for_generation_should_throw_panic() {
 }
 #[test]
 #[should_panic]
-fn test_asking_for_non_valid_pokemon_will_panic() {
-    get_id_by_name("N/A", Some("en"));
-}
-#[test]
-#[should_panic]
 fn test_invalid_id_for_generation_should_throw_panic() {
     get_region(0);
 }

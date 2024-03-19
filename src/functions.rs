@@ -11,7 +11,7 @@ use rand::prelude::SliceRandom;
 pub fn get_complete_generation<'a>(generation: &str, locale: Option<&'a str>) -> Vec<&'a str> {
     let pokemon_list: Vec<&'a str> = list::get_pokemon(locale).unwrap_or_default();
     let mapped_gen: &Generation = generation.map_str_to_generation();
-    let valid_pokemon: Vec<&'a str> = pokemon_list.into_iter().collect();
+    let valid_pokemon: Vec<&str> = pokemon_list.into_iter().collect();
 
     mapped_gen.generation_sublist(valid_pokemon)
 }
