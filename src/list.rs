@@ -11,13 +11,13 @@ pub fn get_translated_list(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Er
         return Ok(english_file);
     }
 
-    let translated_pokemon_list: Vec<&'static str> = match locale {
-        Some("ch") => data::ch::ch(),
-        Some("de") => data::de::de(),
-        Some("en") => data::en::en(),
-        Some("fr") => data::fr::fr(),
-        Some("jp") => data::jp::jp(),
-        Some("ru") => data::ru::ru(),
+    let translated_pokemon_list: Vec<&'static str> = match locale.unwrap() {
+        "ch" => data::ch::ch(),
+        "de" => data::de::de(),
+        "en" => data::en::en(),
+        "fr" => data::fr::fr(),
+        "jp" => data::jp::jp(),
+        "ru" => data::ru::ru(),
         _ => panic!(
             "Language currently not supported. Want support for your language? Pull requests welcome at {}. Or you can just post a feature request as an issue here: {}",
             REPO_LINK,
