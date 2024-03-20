@@ -108,7 +108,7 @@ pub fn get_generation<'a>(generation: &str, locale: Option<&'a str>) -> Vec<&'a 
 /// let paldea: String = pokemon_rs::get_region(9)
 /// ```
 pub fn get_region(generation_number: usize) -> String {
-    functions::get_region_by_generation(generation_number)
+    functions::get_region_by_generation(generation_number, None)
 }
 /// Returns all region names
 ///

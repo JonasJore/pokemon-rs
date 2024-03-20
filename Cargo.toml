@@ -11,4 +11,5 @@ description = "Rust crate for getting Pokémon names"
 repository = "https://github.com/JonasJore/pokemon-rs"
 
 [dependencies]
+maplit = "1.0.2"
 rand = "0.8.5"

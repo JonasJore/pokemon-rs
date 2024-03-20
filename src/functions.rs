@@ -1,4 +1,5 @@
 use crate::data;
+use crate::data::region;
 use crate::declarations::generation::generation::GenerationExtension;
 use crate::declarations::string::string::StringExtension;
 use crate::declarations::vector::vector::VectorExtension;
@@ -57,26 +58,20 @@ pub fn get_all(locale: Option<&str>) -> Vec<&str> {
         .collect()
 }
 
-pub fn get_region_by_generation(id: usize) -> String {
-    let gen: Generation = match id {
-        1 => Generation::Kanto,
-        2 => Generation::Johto,
-        3 => Generation::Hoenn,
-        4 => Generation::Sinnoh,
-        5 => Generation::Unova,
-        6 => Generation::Kalos,
-        7 => Generation::Alola,
-        8 => Generation::Galar,
-        9 => Generation::Paldea,
-        _ => panic!("Invalid input"),
+pub fn get_region_by_generation(id: usize, locale: Option<&str>) -> String {
+    let region_by_locale = match locale.unwrap_or("en") {
+        "en" => region::en::en(),
+        _ => panic!(
+            "Invalid or unsupported locale. PRs welcome at {}",
+            REPO_LINK
+        ),
     };
 
-    return gen.to_string();
+    return region_by_locale.get(&id).unwrap().to_string();
 }
 
-// TODO: need support for regions in different locales
 pub fn get_all_regions() -> Vec<String> {
     (1..=9)
-        .map(|region_id| get_region_by_generation(region_id))
+        .map(|region_id| get_region_by_generation(region_id, None))
         .collect::<Vec<String>>()
 }
