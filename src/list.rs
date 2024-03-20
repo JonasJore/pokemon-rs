@@ -1,6 +1,5 @@
-use crate::constants::REPO_ISSUES;
-use crate::constants::REPO_LINK;
 use crate::data;
+use crate::github::constants::{REPO_ISSUES, REPO_LINK};
 use std::error::Error;
 
 pub fn get_translated_list(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Error>> {

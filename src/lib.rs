@@ -8,7 +8,9 @@
 )]
 #![allow(dead_code, non_upper_case_globals)]
 
-mod constants;
+mod github {
+    pub mod constants;
+}
 mod data;
 mod declarations;
 mod functions;

@@ -1,9 +1,9 @@
-use crate::constants::REPO_LINK;
 use crate::data;
 use crate::declarations::generation::generation::GenerationExtension;
 use crate::declarations::string::string::StringExtension;
 use crate::declarations::vector::vector::VectorExtension;
 use crate::generation::Generation;
+use crate::github::constants::REPO_LINK;
 use crate::list;
 
 use rand::prelude::SliceRandom;
@@ -74,7 +74,7 @@ pub fn get_region_by_generation(id: usize) -> String {
     return gen.to_string();
 }
 
-// TODO: need support for generations in different locales
+// TODO: need support for regions in different locales
 pub fn get_all_regions() -> Vec<String> {
     (1..=9)
         .map(|region_id| get_region_by_generation(region_id))
