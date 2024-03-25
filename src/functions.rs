@@ -70,8 +70,8 @@ pub fn get_region_by_generation(id: usize, locale: Option<&str>) -> String {
     return region_by_locale.get(&id).unwrap().to_string();
 }
 
-pub fn get_all_regions() -> Vec<String> {
-    (1..=9)
-        .map(|region_id| get_region_by_generation(region_id, None))
-        .collect::<Vec<String>>()
+pub fn get_all_regions(locale: Option<&str>) -> Vec<String> {
+    return (1..=9)
+        .map(|region_id| get_region_by_generation(region_id, locale))
+        .collect::<Vec<String>>();
 }

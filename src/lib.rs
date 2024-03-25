@@ -117,7 +117,7 @@ pub fn get_region(generation_number: usize) -> String {
 /// let all_regions: Vec<String> = pokemon_rs::get_all_regions();
 /// ```
 pub fn get_all_regions() -> Vec<String> {
-    functions::get_all_regions()
+    functions::get_all_regions(None)
 }
 
 #[cfg(test)]

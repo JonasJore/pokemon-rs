@@ -81,6 +81,6 @@ fn test_verify_all_nine_regions_works() {
 }
 #[test]
 fn test_get_all_regions() {
-    let all_regions = get_all_regions();
+    let all_regions = get_all_regions(Some("en"));
     assert_eq!(9, all_regions.len());
 }

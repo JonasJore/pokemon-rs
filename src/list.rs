@@ -3,14 +3,7 @@ use crate::github::constants::{REPO_ISSUES, REPO_LINK};
 use std::error::Error;
 
 pub fn get_translated_list(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Error>> {
-    let language: &str = locale.unwrap_or("en");
-
-    if language == "en" {
-        let english_file = data::en::en();
-        return Ok(english_file);
-    }
-
-    let translated_pokemon_list: Vec<&'static str> = match locale.unwrap() {
+    let translated_pokemon_list: Vec<&'static str> = match locale.unwrap_or("en") {
         "ch" => data::ch::ch(),
         "de" => data::de::de(),
         "en" => data::en::en(),
