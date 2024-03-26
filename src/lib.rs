@@ -20,12 +20,12 @@ mod list;
 /// Returns a list of all Pokémons from all generations
 ///
 /// # Arguments
-/// `locale` - `Option<&str>` that holds the language  
+/// `locale` - `Option<&str>` that holds the language
 /// you would like the Pokémon names should be translated in
 ///
 /// # Example
 /// ```rs
-/// // default language is english so providing None is the same as providing `Some("en")`
+/// default language is english so providing None is the same as providing `Some("en")`
 /// pokemon_rs::get_all(None);
 /// pokemon_rs::get_all(Some("jp"));
 /// ```
@@ -51,7 +51,7 @@ pub fn get_by_id(id: usize, locale: Option<&str>) -> &str {
 ///
 /// # Arguments
 ///
-/// `name` - `&str` that represents the Pokémon you'd like to lookup id for.  
+/// `name` - `&str` that represents the Pokémon you'd like to lookup id for.
 /// `locale` - `Option<&str>` that holds the language you are searching for Pokémon id in.
 ///
 /// # Example
@@ -83,7 +83,7 @@ pub fn random(locale: Option<&str>) -> String {
 ///
 /// # Arguments
 ///
-/// `generation` - `&str` that represents the generation (or region) name you would like to get.  
+/// `generation` - `&str` that represents the generation (or region) name you would like to get.
 /// `locale` - `Option<&str>` that represents which language you would like the Pokémon names in returned generation in.
 ///
 /// # Example
@@ -95,7 +95,7 @@ pub fn random(locale: Option<&str>) -> String {
 pub fn get_generation<'a>(generation: &str, locale: Option<&'a str>) -> Vec<&'a str> {
     functions::get_complete_generation(generation, locale)
 }
-/// Returns region name from generation number in released order.  
+/// Returns region name from generation number in released order.
 /// Kanto = 1, Johto = 2, Hoenn = 3 ...
 ///
 /// # Arguments
