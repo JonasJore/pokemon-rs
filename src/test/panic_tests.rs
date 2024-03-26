@@ -29,10 +29,10 @@ fn test_get_undefined_generation() {
 #[test]
 #[should_panic]
 fn test_really_high_id_for_generation_should_throw_panic() {
-    get_region(100);
+    get_region(100, None);
 }
 #[test]
 #[should_panic]
 fn test_invalid_id_for_generation_should_throw_panic() {
-    get_region(0);
+    get_region(0, None);
 }

@@ -67,7 +67,7 @@ fn test_get_all_ninth_gen_pokemon_as_vector() {
 }
 #[test]
 fn test_gen_2_should_get_johto_as_string() {
-    let johto = get_region(2);
+    let johto = get_region(2, None);
     assert_eq!("Johto", johto);
 }
 #[test]
@@ -76,7 +76,7 @@ fn test_verify_all_nine_regions_works() {
     let range = 1..10;
     let start = range.start as usize;
     let end = range.end as usize;
-    let all_regions = (start..end).map(|f| vec.push(get_region(f)));
+    let all_regions = (start..end).map(|f| vec.push(get_region(f, None)));
     assert_eq!(9, all_regions.len());
 }
 #[test]
