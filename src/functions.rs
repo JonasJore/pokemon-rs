@@ -43,14 +43,13 @@ pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
 }
 
 pub fn random(locale: Option<&str>) -> Option<String> {
-    return locale
-        .and_then(|loc| list::get_pokemon(Some(loc)))
-        .or_else(|| list::get_pokemon(None))
-        .and_then(|pokemon_list| {
-            pokemon_list
-                .choose(&mut rand::thread_rng())
-                .map(|&chosen_pokemon| chosen_pokemon.to_string())
-        });
+    let mut rng = rand::thread_rng();
+    let pokemons: Vec<String> = match list::get_pokemon(locale) {
+        Some(pokemon_list) => pokemon_list.into_iter().map(ToString::to_string).collect(),
+        None => return None,
+    };
+
+    pokemons.choose(&mut rng).map(|random_item| random_item.clone())
 }
 
 pub fn get_all(locale: Option<&str>) -> Vec<&str> {
