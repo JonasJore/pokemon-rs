@@ -45,7 +45,7 @@ pub fn get_all(locale: Option<&str>) -> Vec<&str> {
 /// pokemon_rs::get_by_id(24, None);
 /// ```
 pub fn get_by_id(id: usize, locale: Option<&str>) -> &str {
-    functions::get_by_id(id, locale)
+    functions::get_by_id(id, locale).unwrap()
 }
 /// Returns the Pokémon's id that corresponds to a given id
 ///
@@ -101,24 +101,28 @@ pub fn get_generation<'a>(generation: &str, locale: Option<&'a str>) -> Vec<&'a 
 /// # Arguments
 ///
 /// `generation_number` - `usize`
+/// `locale` - `Option<&str>` that represents which language you would like the Pokémon names in returned generation in.
 ///
 /// # Example
 /// ```rs
-/// pokemon_rs::get_region(1)
-/// let paldea: String = pokemon_rs::get_region(9)
+/// pokemon_rs::get_region(1, Some("en"));
+/// let paldea: String = pokemon_rs::get_region(9, Some("en"));
 /// ```
-pub fn get_region(generation_number: usize) -> String {
-    functions::get_region_by_generation(generation_number, None)
+pub fn get_region(generation_number: usize, locale: Option<&str>) -> String {
+    functions::get_region_by_generation(generation_number, locale)
 }
 /// Returns all region names
 ///
+/// # Arguments
+///
+/// `locale` - `Option<&str>` that represents which language you would like the Pokémon names in returned generation in.
+///
 /// # Example
 /// ```rs
-/// let all_regions: Vec<String> = pokemon_rs::get_all_regions();
+/// let all_regions: Vec<String> = pokemon_rs::get_all_regions(Some("en"));
 /// ```
-pub fn get_all_regions() -> Vec<String> {
-    functions::get_all_regions(None)
+pub fn get_all_regions(locale: Option<&str>) -> Vec<String> {
+    functions::get_all_regions(locale)
 }
-
 #[cfg(test)]
 mod test;

@@ -20,6 +20,13 @@ pub fn get_translated_list(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Er
     Ok(translated_pokemon_list)
 }
 
-pub fn get_pokemon(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Error>> {
-    get_translated_list(locale)
+pub fn get_pokemon(locale: Option<&str>) -> Option<Vec<&str>> {
+    let result = get_translated_list(locale);
+    match result {
+        Ok(vec) => Some(vec),
+        Err(_) => panic!(
+            "Translated list could not be returned, please report issues here: {}",
+            REPO_ISSUES
+        ),
+    }
 }

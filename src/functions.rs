@@ -10,17 +10,17 @@ use crate::list;
 use rand::prelude::SliceRandom;
 
 pub fn get_complete_generation<'a>(generation: &str, locale: Option<&'a str>) -> Vec<&'a str> {
-    let pokemon_list: Vec<&'a str> = list::get_pokemon(locale).unwrap_or_default();
+    let pokemon_list: Vec<&'a str> = list::get_pokemon(locale).unwrap();
     let mapped_gen: &Generation = generation.map_str_to_generation();
     let valid_pokemon: Vec<&str> = pokemon_list.into_iter().collect();
 
     mapped_gen.generation_sublist(valid_pokemon)
 }
 
-// TODO: cover id being out of bounds, and introduce Option as return, also update tests accordingly
-pub fn get_by_id(id: usize, locale: Option<&str>) -> &str {
-    let pokemon_list = list::get_pokemon(locale).unwrap_or_default();
-    pokemon_list[id - 1]
+// TODO: cover id being out of bounds
+pub fn get_by_id(id: usize, locale: Option<&str>) -> Option<&str> {
+    let pokemon_list = list::get_pokemon(locale).unwrap();
+    return Some(pokemon_list[id - 1]);
 }
 
 pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
@@ -43,11 +43,14 @@ pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
 }
 
 pub fn random(locale: Option<&str>) -> Option<String> {
-    list::get_pokemon(locale).ok().and_then(|pokemon_list| {
-        pokemon_list
-            .choose(&mut rand::thread_rng())
-            .map(|&chosen_pokemon| chosen_pokemon.to_string())
-    })
+    return locale
+        .and_then(|loc| list::get_pokemon(Some(loc)))
+        .or_else(|| list::get_pokemon(None))
+        .and_then(|pokemon_list| {
+            pokemon_list
+                .choose(&mut rand::thread_rng())
+                .map(|&chosen_pokemon| chosen_pokemon.to_string())
+        });
 }
 
 pub fn get_all(locale: Option<&str>) -> Vec<&str> {
