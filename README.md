@@ -6,12 +6,13 @@
 ![downloads](https://img.shields.io/crates/d/pokemon-rs)
 ![recent downloads](https://img.shields.io/crates/dr/pokemon-rs)
 ![downloads latest version](https://img.shields.io/crates/dv/pokemon-rs)
+
 ## Description
 
 Rust library for getting Pokémon names
 
 PRs for adding support for more translated Pokémon generations welcome
-  
+
 ## Usage
 
 ```rust
@@ -48,8 +49,12 @@ pokemon_rs::random(Some("jp"));
 pokemon_rs::get_generation("Kanto", Some("jp"));
 // => ['フシギダネ', 'フシギソウ', 'フシギバナ', ...'ミュウツー', 'ミュウ']
 
-pokemon_rs::get_region(4);
+pokemon_rs::get_region(4, Some("en"));
 // => Sinnoh
+
+pokemon_rs::get_all_regions(Some("en"))
+// => ['Kanto', 'Johto', 'Hoenn', ...'Paldea']
+
 ```
 
 ## Supported Pokémon generations and languages
@@ -58,24 +63,25 @@ pokemon_rs::get_region(4);
 ❌ = Not Supported  
 ⌛ = Partly Supported
 
-|  Generation | Region | EN(default) | CH | DE | FR | JP | RU |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Kanto | ✅ | ✅ | ✅  | ✅ | ✅ | ✅ |
-| 2 | Johto | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 | Hoenn | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 4 | Sinnoh | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 5 | Unova | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 6 | Kalos | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 7 | Alola | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 8 | Galar | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 9 | Paldea | ✅ | ❌ | ✅ | ✅ | ✅ | ❌ |
+| Generation | Region | EN(default) | CH  | DE  | FR  | JP  | RU  |
+| ---------- | ------ | ----------- | --- | --- | --- | --- | --- |
+| 1          | Kanto  | ✅          | ✅  | ✅  | ✅  | ✅  | ✅  |
+| 2          | Johto  | ✅          | ✅  | ✅  | ✅  | ✅  | ✅  |
+| 3          | Hoenn  | ✅          | ✅  | ✅  | ✅  | ✅  | ✅  |
+| 4          | Sinnoh | ✅          | ✅  | ✅  | ✅  | ✅  | ✅  |
+| 5          | Unova  | ✅          | ✅  | ✅  | ✅  | ✅  | ✅  |
+| 6          | Kalos  | ✅          | ✅  | ✅  | ✅  | ✅  | ✅  |
+| 7          | Alola  | ✅          | ✅  | ✅  | ✅  | ✅  | ✅  |
+| 8          | Galar  | ✅          | ✅  | ✅  | ✅  | ✅  | ✅  |
+| 9          | Paldea | ✅          | ❌  | ✅  | ✅  | ✅  | ❌  |
 
 ## Supported languages
 
 ---
+
 `en`: English (default language if None is given as `locale`)  
 `jp`: Japanese  
 `fr`: French  
 `de`: German  
 `ru`: Russian  
-`ch`: Chinese  
+`ch`: Chinese
