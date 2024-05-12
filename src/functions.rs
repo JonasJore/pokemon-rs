@@ -49,7 +49,9 @@ pub fn random(locale: Option<&str>) -> Option<String> {
         None => return None,
     };
 
-    pokemons.choose(&mut rng).map(|random_item| random_item.clone())
+    pokemons
+        .choose(&mut rng)
+        .map(|random_item| random_item.clone())
 }
 
 pub fn get_all(locale: Option<&str>) -> Vec<&str> {
@@ -63,6 +65,7 @@ pub fn get_all(locale: Option<&str>) -> Vec<&str> {
 pub fn get_region_by_generation(id: usize, locale: Option<&str>) -> String {
     let region_by_locale = match locale.unwrap_or("en") {
         "en" => region::en::en(),
+        "de" => region::de::de(),
         _ => panic!(
             "Invalid or unsupported locale. PRs welcome at {}",
             REPO_LINK
