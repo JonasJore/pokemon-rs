@@ -67,6 +67,7 @@ pub fn get_region_by_generation(id: usize, locale: Option<&str>) -> String {
         "en" => region::en::en(),
         "de" => region::de::de(),
         "fr" => region::fr::fr(),
+        "ch" => region::ch::ch(),
         _ => panic!(
             "Invalid or unsupported locale. PRs welcome at {}",
             REPO_LINK
