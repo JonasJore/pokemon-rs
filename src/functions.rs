@@ -66,6 +66,7 @@ pub fn get_region_by_generation(id: usize, locale: Option<&str>) -> String {
     let region_by_locale = match locale.unwrap_or("en") {
         "en" => region::en::en(),
         "de" => region::de::de(),
+        "fr" => region::fr::fr(),
         _ => panic!(
             "Invalid or unsupported locale. PRs welcome at {}",
             REPO_LINK
