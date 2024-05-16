@@ -234,3 +234,57 @@ fn paldea_japanese_support() {
     let paldea = get_region(9, Some("jp"));
     assert_eq!(paldea, "パルデア")
 }
+
+#[test]
+fn kanto_russian_support() {
+    let kanto = get_region(1, Some("ru"));
+    assert_eq!(kanto, "Канто")
+}
+
+#[test]
+fn johto_russian_support() {
+    let johto = get_region(2, Some("ru"));
+    assert_eq!(johto, "Джото")
+}
+
+#[test]
+fn hoenn_russian_support() {
+    let hoenn = get_region(3, Some("ru"));
+    assert_eq!(hoenn, "Хоэнн")
+}
+
+#[test]
+fn sinnoh_russian_support() {
+    let sinnoh = get_region(4, Some("ru"));
+    assert_eq!(sinnoh, "Синно")
+}
+
+#[test]
+fn unova_russian_support() {
+    let unova = get_region(5, Some("ru"));
+    assert_eq!(unova, "Юнова")
+}
+
+#[test]
+fn kalos_russian_support() {
+    let kalos = get_region(6, Some("ru"));
+    assert_eq!(kalos, "Калос")
+}
+
+#[test]
+fn alola_russian_support() {
+    let alola = get_region(7, Some("ru"));
+    assert_eq!(alola, "Алола")
+}
+
+#[test]
+fn galar_russian_support() {
+    let galar = get_region(8, Some("ru"));
+    assert_eq!(galar, "Галар")
+}
+
+#[test]
+fn paldea_russian_support() {
+    let paldea = get_region(9, Some("ru"));
+    assert_eq!(paldea, "Палдеа")
+}
