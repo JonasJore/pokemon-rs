@@ -27,7 +27,7 @@ pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
     let pokemon_list = list::get_pokemon(locale).unwrap();
     if !pokemon_list.contains(&name) {
         let list_alternate_locale = match name {
-            name if data::ch::ch().contains(&name) => data::ch::ch(),
+            name if data::cn::cn().contains(&name) => data::cn::cn(),
             name if data::de::de().contains(&name) => data::de::de(),
             name if data::en::en().contains(&name) => data::en::en(),
             name if data::fr::fr().contains(&name) => data::fr::fr(),
@@ -67,7 +67,7 @@ pub fn get_region_by_generation(id: usize, locale: Option<&str>) -> String {
         "en" => region::en::en(),
         "de" => region::de::de(),
         "fr" => region::fr::fr(),
-        "ch" => region::ch::ch(),
+        "cn" => region::cn::cn(),
         "jp" => region::jp::jp(),
         "ru" => region::ru::ru(),
         _ => panic!(

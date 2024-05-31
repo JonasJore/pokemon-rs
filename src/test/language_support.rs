@@ -42,7 +42,7 @@ fn test_gen_2_support_german() {
 }
 #[test]
 fn test_gen_2_support_chinese() {
-    let raikou = get_by_id(243, Some("ch"));
+    let raikou = get_by_id(243, Some("cn"));
     assert_eq!(raikou, "雷公");
 }
 #[test]
@@ -57,7 +57,7 @@ fn test_gen_3_support_english() {
 }
 #[test]
 fn test_gen_3_support_chinese() {
-    let rayquaza = get_by_id(384, Some("ch"));
+    let rayquaza = get_by_id(384, Some("cn"));
     assert_eq!(rayquaza, "烈空坐");
 }
 #[test]
@@ -92,7 +92,7 @@ fn test_gen_4_support_japanese() {
 }
 #[test]
 fn test_gen_4_support_chinese() {
-    let creselia = get_by_id(488, Some("ch"));
+    let creselia = get_by_id(488, Some("cn"));
     assert_eq!(creselia, "克雷色利亞");
 }
 #[test]
@@ -126,7 +126,7 @@ fn test_gen_5_support_japanese() {
 }
 #[test]
 fn test_gen_5_support_chinese() {
-    let victini = get_by_id(494, Some("ch"));
+    let victini = get_by_id(494, Some("cn"));
     assert_eq!(victini, "比克提尼");
 }
 #[test]
@@ -162,7 +162,7 @@ fn test_gen_6_support_japanese() {
 }
 #[test]
 fn test_gen_6_support_chinese() {
-    let chespin = get_by_id(650, Some("ch"));
+    let chespin = get_by_id(650, Some("cn"));
     assert_eq!(chespin, "哈力栗");
 }
 #[test]
@@ -198,7 +198,7 @@ fn test_gen_7_support_japanese() {
 }
 #[test]
 fn test_gen_7_support_chinese() {
-    let solgaleo = get_by_id(791, Some("ch"));
+    let solgaleo = get_by_id(791, Some("cn"));
     assert_eq!(solgaleo, "索爾迦雷歐");
 }
 #[test]
@@ -217,8 +217,8 @@ fn test_gen_7_support_french() {
 }
 #[test]
 fn test_gen_7_support_russian() {
-  let melmetal = get_by_id(809, Some("ru"));
-  assert_eq!(melmetal, "Мелметал");
+    let melmetal = get_by_id(809, Some("ru"));
+    assert_eq!(melmetal, "Мелметал");
 }
 #[test]
 fn test_gen_8_support_english() {
@@ -232,7 +232,7 @@ fn test_gen_8_support_japanese() {
 }
 #[test]
 fn test_gen_8_support_chinese() {
-    let regieleki = get_by_id(894, Some("ch"));
+    let regieleki = get_by_id(894, Some("cn"));
     assert_eq!(regieleki, "雷吉艾勒奇");
 }
 #[test]

@@ -1,4 +1,4 @@
-pub fn ch<'pokemon_ch>() -> Vec<&'pokemon_ch str> {
+pub fn cn<'pokemon_cn>() -> Vec<&'pokemon_cn str> {
     vec![
         // GEN 1
         "妙蛙種子",
