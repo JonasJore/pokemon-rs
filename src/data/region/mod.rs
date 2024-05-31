@@ -1,4 +1,4 @@
-pub mod ch;
+pub mod cn;
 pub mod de;
 pub mod en;
 pub mod fr;

@@ -61,7 +61,7 @@ pokemon_rs::get_all_regions(Some("en"))
 ❌ = Not Supported  
 ⌛ = Partly Supported
 
-| Generation | Region | EN(default) | CH  | DE  | FR  | JP  | RU  |
+| Generation | Region | EN(default) | CN  | DE  | FR  | JP  | RU  |
 | ---------- | ------ | ----------- | --- | --- | --- | --- | --- |
 | 1          | Kanto  | ✅          | ✅  | ✅  | ✅  | ✅  | ✅  |
 | 2          | Johto  | ✅          | ✅  | ✅  | ✅  | ✅  | ✅  |
@@ -82,4 +82,4 @@ pokemon_rs::get_all_regions(Some("en"))
 `fr`: French  
 `de`: German  
 `ru`: Russian  
-`ch`: Chinese
+`cn`: Chinese

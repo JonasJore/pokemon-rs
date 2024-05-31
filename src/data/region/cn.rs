@@ -1,7 +1,7 @@
 use maplit::hashmap;
 use std::collections::HashMap;
 
-pub fn ch() -> HashMap<usize, String> {
+pub fn cn() -> HashMap<usize, String> {
     return hashmap! {
         1 => "关都".to_string(),
         2 => "城都".to_string(),

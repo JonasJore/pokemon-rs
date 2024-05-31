@@ -137,47 +137,47 @@ fn paldea_french_support() {
 }
 #[test]
 fn kanto_chinese_support() {
-    let kanto = get_region(1, Some("ch"));
+    let kanto = get_region(1, Some("cn"));
     assert_eq!(kanto, "关都")
 }
 #[test]
 fn johto_chinese_support() {
-    let johto = get_region(2, Some("ch"));
+    let johto = get_region(2, Some("cn"));
     assert_eq!(johto, "城都")
 }
 #[test]
 fn hoenn_chinese_support() {
-    let hoenn = get_region(3, Some("ch"));
+    let hoenn = get_region(3, Some("cn"));
     assert_eq!(hoenn, "丰缘")
 }
 #[test]
 fn sinnoh_chinese_support() {
-    let sinnoh = get_region(4, Some("ch"));
+    let sinnoh = get_region(4, Some("cn"));
     assert_eq!(sinnoh, "神奥")
 }
 #[test]
 fn unova_chinese_support() {
-    let unova = get_region(5, Some("ch"));
+    let unova = get_region(5, Some("cn"));
     assert_eq!(unova, "合众")
 }
 #[test]
 fn kalos_chinese_support() {
-    let kalos = get_region(6, Some("ch"));
+    let kalos = get_region(6, Some("cn"));
     assert_eq!(kalos, "卡洛斯")
 }
 #[test]
 fn alola_chinese_support() {
-    let alola = get_region(7, Some("ch"));
+    let alola = get_region(7, Some("cn"));
     assert_eq!(alola, "阿罗拉")
 }
 #[test]
 fn galar_chinese_support() {
-    let galar = get_region(8, Some("ch"));
+    let galar = get_region(8, Some("cn"));
     assert_eq!(galar, "伽勒尔")
 }
 #[test]
 fn paldea_chinese_support() {
-    let paldea = get_region(9, Some("ch"));
+    let paldea = get_region(9, Some("cn"));
     assert_eq!(paldea, "帕尔迪亚")
 }
 

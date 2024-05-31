@@ -4,7 +4,7 @@ use std::error::Error;
 
 pub fn get_translated_list(locale: Option<&str>) -> Result<Vec<&str>, Box<dyn Error>> {
     let translated_pokemon_list: Vec<&'static str> = match locale.unwrap_or("en") {
-        "ch" => data::ch::ch(),
+        "cn" => data::cn::cn(),
         "de" => data::de::de(),
         "en" => data::en::en(),
         "fr" => data::fr::fr(),
