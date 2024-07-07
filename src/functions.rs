@@ -96,9 +96,7 @@ pub fn get_all_types(locale: Option<&str>) -> Vec<String> {
     };
 
     let types = (1..=types_by_locale.len())
-        .map(|element_id| {
-            types_by_locale[&(element_id)].clone() // Adjust for zero-based indexing and clone the string
-        })
+        .map(|element_id| types_by_locale[&(element_id)].clone())
         .collect::<Vec<String>>();
 
     return types;
