@@ -5,4 +5,5 @@ pub mod fr;
 pub mod jp;
 pub mod ru;
 
+pub mod element;
 pub mod region;

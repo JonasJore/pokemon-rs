@@ -124,5 +124,9 @@ pub fn get_region(generation_number: usize, locale: Option<&str>) -> String {
 pub fn get_all_regions(locale: Option<&str>) -> Vec<String> {
     functions::get_all_regions(locale)
 }
+
+pub fn get_all_types(locale: Option<&str>) -> Vec<String> {
+    functions::get_all_types(locale)
+}
 #[cfg(test)]
 mod test;

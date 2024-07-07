@@ -1,5 +1,6 @@
-use crate::data;
+use crate::data::element;
 use crate::data::region;
+use crate::data::{self};
 use crate::declarations::generation::generation::GenerationExtension;
 use crate::declarations::string::string::StringExtension;
 use crate::declarations::vector::vector::VectorExtension;
@@ -83,4 +84,22 @@ pub fn get_all_regions(locale: Option<&str>) -> Vec<String> {
     return (1..=9)
         .map(|region_id| get_region_by_generation(region_id, locale))
         .collect::<Vec<String>>();
+}
+
+pub fn get_all_types(locale: Option<&str>) -> Vec<String> {
+    let types_by_locale = match locale.unwrap_or("en") {
+        "en" => element::en::en(),
+        _ => panic!(
+            "Invalid or unsupported locale. PRs welcome at {}",
+            REPO_LINK
+        ),
+    };
+
+    let types = (1..=types_by_locale.len())
+        .map(|element_id| {
+            types_by_locale[&(element_id)].clone() // Adjust for zero-based indexing and clone the string
+        })
+        .collect::<Vec<String>>();
+
+    return types;
 }
