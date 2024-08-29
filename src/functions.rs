@@ -5,8 +5,8 @@ use crate::declarations::generation::generation::GenerationExtension;
 use crate::declarations::string::string::StringExtension;
 use crate::declarations::vector::vector::VectorExtension;
 use crate::generation::Generation;
-use crate::github::constants::REPO_LINK;
 use crate::list;
+use crate::util::panic_by_reason::panic_handling::{get_panic_by_reason, PanicReason};
 
 use rand::prelude::SliceRandom;
 
@@ -94,22 +94,4 @@ pub fn get_all_types(locale: Option<&str>) -> Vec<String> {
         .collect::<Vec<String>>();
 
     return types;
-}
-
-enum PanicReason {
-    UnsupportedLanguage,
-    UnsupportedPokemon,
-}
-
-fn get_panic_by_reason(panic_reason: PanicReason) -> ! {
-    match panic_reason {
-        PanicReason::UnsupportedLanguage => panic!(
-            "Invalid or unsupported locale. PRs welcome at {}",
-            REPO_LINK
-        ),
-        PanicReason::UnsupportedPokemon => panic!(
-            "The pokémon given does not seem to have been added to the list yet, PRs welcome at {}",
-            REPO_LINK
-        ),
-    }
 }

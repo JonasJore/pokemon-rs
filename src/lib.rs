@@ -16,6 +16,7 @@ mod declarations;
 mod functions;
 mod generation;
 mod list;
+mod util;
 
 /// Returns a list of all Pokémons from all generations
 ///
