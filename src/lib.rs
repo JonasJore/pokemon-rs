@@ -125,9 +125,31 @@ pub fn get_region(generation_number: usize, locale: Option<&str>) -> String {
 pub fn get_all_regions(locale: Option<&str>) -> Vec<String> {
     functions::get_all_regions(locale)
 }
-
+/// Returns all Pokemon element types
+///
+/// # Arguments
+///
+/// `locale` - `Option<&str>` that represents which language you would like the Pokémon element types in returned generation in.
+/// NB: The lib in it current state only supports element types in english (default locale) asking for other locales will create a panic
+/// # Example
+/// ```rs
+/// let all_regions: Vec<String> = pokemon_rs::get_all_types(Some("en"));
+/// ```
 pub fn get_all_types(locale: Option<&str>) -> Vec<String> {
     functions::get_all_types(locale)
+}
+/// Returns specific Pokemon element type by id and locale
+///
+/// # Arguments
+///
+/// `locale` - `Option<&str>` that represents which language you would like the Pokémon element types in returned generation in.
+/// NB: The lib in it current state only supports element types in english (default locale) asking for other locales will create a panic
+/// # Example
+/// ```rs
+/// let all_regions: Vec<String> = pokemon_rs::get_type_by_id(1, Some("en"));
+/// ```
+pub fn get_type_by_id(id: usize, locale: Option<&str>) -> String {
+    functions::get_type_by_id(id, locale)
 }
 #[cfg(test)]
 mod test;
