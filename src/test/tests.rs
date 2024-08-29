@@ -1,4 +1,7 @@
-use crate::{functions::get_all_regions, get_all, get_generation, get_region};
+use crate::{
+    functions::{get_all_regions, get_all_types, get_type_by_id},
+    get_all, get_generation, get_region,
+};
 
 fn type_to_string<T>(_: &T) -> String {
     format!("{}", std::any::type_name::<T>())
@@ -83,4 +86,14 @@ fn test_verify_all_nine_regions_works() {
 fn test_get_all_regions() {
     let all_regions = get_all_regions(Some("en"));
     assert_eq!(9, all_regions.len());
+}
+#[test]
+fn test_get_all_types() {
+    let all_types = get_all_types(Some("en"));
+    assert!(all_types.len() != 0);
+}
+#[test]
+fn test_get_specific_type() {
+    let normal_type = get_type_by_id(1, Some("en"));
+    assert_eq!(normal_type, "Normal");
 }

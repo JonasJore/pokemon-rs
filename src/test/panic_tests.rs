@@ -1,4 +1,9 @@
-use crate::{get_all, get_by_id, get_generation, get_id_by_name, get_region, random};
+use std::usize;
+
+use crate::{
+    functions::{get_all_types, get_type_by_id},
+    get_all, get_by_id, get_generation, get_id_by_name, get_region, random,
+};
 
 #[test]
 #[should_panic]
@@ -35,4 +40,14 @@ fn test_really_high_id_for_generation_should_throw_panic() {
 #[should_panic]
 fn test_invalid_id_for_generation_should_throw_panic() {
     get_region(0, None);
+}
+#[test]
+#[should_panic]
+fn get_all_types_should_panic_on_unsupported_locale() {
+    let _ = get_all_types(Some("elvish"));
+}
+#[test]
+#[should_panic]
+fn test_wrong_id_should_panic_get_type_by_id() {
+    let _ = get_type_by_id(usize::MAX, Some("en"));
 }
