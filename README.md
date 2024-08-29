@@ -50,8 +50,14 @@ pokemon_rs::get_generation("Kanto", Some("jp"));
 pokemon_rs::get_region(4, Some("en"));
 // => Sinnoh
 
-pokemon_rs::get_all_regions(Some("en"))
+pokemon_rs::get_all_regions(Some("en"));
 // => ['Kanto', 'Johto', 'Hoenn', ...'Paldea']
+
+pokemon_rs::get_all_types(Some("en"));
+// => ['Normal', 'Fire', 'Water', ...'Fairy']
+
+pokemon_rs::get_type_by_id(1, Some("en"));
+// => Normal
 
 ```
 
