@@ -95,3 +95,8 @@ pub fn get_all_types(locale: Option<&str>) -> Vec<String> {
 
     return types;
 }
+
+pub fn get_type_by_id(id: usize, locale: Option<&str>) -> String {
+    let types = get_all_types(locale);
+    return types.get(id - 1).unwrap().to_owned();
+}
