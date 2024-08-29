@@ -34,7 +34,7 @@ pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
             name if data::fr::fr().contains(&name) => data::fr::fr(),
             name if data::jp::jp().contains(&name) => data::jp::jp(),
             name if data::ru::ru().contains(&name) => data::ru::ru(),
-            _ => panic!("The pokémon given does not seem to have been added to the list yet, PRs welcome at {}", REPO_LINK)
+            _ => get_panic_by_reason(PanicReason::UnsupportedPokemon),
         };
 
         return list_alternate_locale.get_id(name);
@@ -71,10 +71,7 @@ pub fn get_region_by_generation(id: usize, locale: Option<&str>) -> String {
         "cn" => region::cn::cn(),
         "jp" => region::jp::jp(),
         "ru" => region::ru::ru(),
-        _ => panic!(
-            "Invalid or unsupported locale. PRs welcome at {}",
-            REPO_LINK
-        ),
+        _ => get_panic_by_reason(PanicReason::UnsupportedLanguage),
     };
 
     return region_by_locale.get(&id).unwrap().to_string();
@@ -89,10 +86,7 @@ pub fn get_all_regions(locale: Option<&str>) -> Vec<String> {
 pub fn get_all_types(locale: Option<&str>) -> Vec<String> {
     let types_by_locale = match locale.unwrap_or("en") {
         "en" => element::en::en(),
-        _ => panic!(
-            "Invalid or unsupported locale. PRs welcome at {}",
-            REPO_LINK
-        ),
+        _ => get_panic_by_reason(PanicReason::UnsupportedLanguage),
     };
 
     let types = (1..=types_by_locale.len())
@@ -100,4 +94,22 @@ pub fn get_all_types(locale: Option<&str>) -> Vec<String> {
         .collect::<Vec<String>>();
 
     return types;
+}
+
+enum PanicReason {
+    UnsupportedLanguage,
+    UnsupportedPokemon,
+}
+
+fn get_panic_by_reason(panic_reason: PanicReason) -> ! {
+    match panic_reason {
+        PanicReason::UnsupportedLanguage => panic!(
+            "Invalid or unsupported locale. PRs welcome at {}",
+            REPO_LINK
+        ),
+        PanicReason::UnsupportedPokemon => panic!(
+            "The pokémon given does not seem to have been added to the list yet, PRs welcome at {}",
+            REPO_LINK
+        ),
+    }
 }

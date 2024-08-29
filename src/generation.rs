@@ -13,7 +13,7 @@ pub enum Generation {
 }
 
 impl Display for Generation {
-    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
+    fn fmt(&self, formatter: &mut Formatter<'_>) -> Result {
         let gen_str = match self {
             Generation::Kanto => "Kanto",
             Generation::Johto => "Johto",
@@ -25,6 +25,6 @@ impl Display for Generation {
             Generation::Galar => "Galar",
             Generation::Paldea => "Paldea",
         };
-        write!(f, "{}", gen_str)
+        write!(formatter, "{}", gen_str)
     }
 }
