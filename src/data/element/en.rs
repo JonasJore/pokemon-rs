@@ -1,6 +1,5 @@
-use std::collections::HashMap;
-
 use maplit::hashmap;
+use std::collections::HashMap;
 
 pub fn en() -> HashMap<usize, String> {
     return hashmap! {
