@@ -12,3 +12,10 @@ fn type_is_correct_format() {
 
     assert_eq!(normal_type, String::from("Normal"));
 }
+#[test]
+fn support_zh_cn_locale() {
+    let all_types = get_all_types(Some("zh_cn"));
+    let normal_type = all_types.first().unwrap().to_owned();
+
+    assert_eq!(normal_type, String::from("普通"));
+}

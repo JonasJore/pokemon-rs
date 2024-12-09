@@ -86,6 +86,7 @@ pub fn get_all_regions(locale: Option<&str>) -> Vec<String> {
 pub fn get_all_types(locale: Option<&str>) -> Vec<String> {
     let types_by_locale = match locale.unwrap_or("en") {
         "en" => element::en::en(),
+        "zh_cn" => element::zh_cn::zh(),
         _ => get_panic_by_reason(PanicReason::UnsupportedLanguage),
     };
 
