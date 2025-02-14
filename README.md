@@ -93,4 +93,4 @@ pokemon_rs::get_type_by_id(1, Some("en"));
 
 ## Buy me a coffee
 
-If you like my work, consider [buying me a coffee](https://buymeacoffee.com/jnsjr) ☕!
+If you like my work, please consider [buying me a coffee](https://buymeacoffee.com/jnsjr) ☕!
