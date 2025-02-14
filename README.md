@@ -9,7 +9,7 @@
 
 ## Description
 
-Rust library for getting Pokémon names and regions in different languages
+Rust library for getting Pokémon names, regions and types in different languages
 
 ## Usage
 
