@@ -12,4 +12,4 @@ repository = "https://github.com/JonasJore/pokemon-rs"
 
 [dependencies]
 maplit = "1.0.2"
-rand = "0.8.5"
+rand = "0.9.1"
