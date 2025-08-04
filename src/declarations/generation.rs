@@ -1,6 +1,7 @@
 pub mod generation {
     use crate::generation::Generation;
 
+    // TODO: lifetime warning here needs to be fixed
     pub trait GenerationExtension {
         fn generation_sublist<'a>(&'a self, list: Vec<&'a str>) -> Vec<&str>;
     }

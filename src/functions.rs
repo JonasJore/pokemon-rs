@@ -8,6 +8,7 @@ use crate::generation::Generation;
 use crate::list;
 use crate::util::panic_by_reason::panic_handling::{get_panic_by_reason, PanicReason};
 
+// TODO: can i make this myself to reduce external deps?
 use rand::prelude::SliceRandom;
 
 pub fn get_complete_generation<'a>(generation: &str, locale: Option<&'a str>) -> Vec<&'a str> {
@@ -27,6 +28,7 @@ pub fn get_by_id(id: usize, locale: Option<&str>) -> Option<&str> {
 pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
     let pokemon_list = list::get_pokemon(locale).unwrap();
     if !pokemon_list.contains(&name) {
+        // TODO: too much code repetition. fix!
         let list_alternate_locale = match name {
             name if data::cn::cn().contains(&name) => data::cn::cn(),
             name if data::de::de().contains(&name) => data::de::de(),
