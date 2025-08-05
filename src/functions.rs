@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+
 use crate::data::element;
 use crate::data::region;
 use crate::data::{self};
@@ -105,12 +107,15 @@ pub fn get_type_by_id(id: usize, locale: Option<&str>) -> String {
 }
 
 pub fn get_sprite_by_name(name: &str) -> Result<String, std::io::Error> {
-    let file_path = format!("src/data/sprites/pokemon/gen_1/{}", name);
+    let mut file_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    // TODO: make this path more generic when supporting more generations
+    file_path.push("src/data/sprites/pokemon/gen_1");
+    file_path.push(name);
     let file_content_result = std::fs::read_to_string(&file_path);
     match file_content_result {
-        Ok(file_content) => {
-            let parsed = file_content.replace("\\e", "\x1b");
-            Ok(parsed)
+        Ok(file_content_raw) => {
+            let file_content_parsed = file_content_raw.replace("\\e", "\x1b");
+            Ok(file_content_parsed)
         }
         Err(e) => panic!("error: {}", e),
     }
