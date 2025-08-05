@@ -120,3 +120,18 @@ pub fn get_sprite_by_name(name: &str) -> Result<String, std::io::Error> {
         Err(e) => panic!("error: {}", e),
     }
 }
+
+pub fn get_sprite_by_id(id: usize) -> Result<String, std::io::Error> {
+    let pokemon_name_by_id = get_by_id(id, Some("en"));
+    let mut file_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    file_path.push("src/data/sprites/pokemon/gen_1");
+    file_path.push(pokemon_name_by_id.unwrap());
+    let file_content_result = std::fs::read_to_string(&file_path);
+    match file_content_result {
+        Ok(file_content_raw) => {
+            let file_content_parsed = file_content_raw.replace("\\e", "\x1b");
+            Ok(file_content_parsed)
+        }
+        Err(e) => panic!("error: {}", e),
+    }
+}
