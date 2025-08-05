@@ -151,5 +151,10 @@ pub fn get_all_types(locale: Option<&str>) -> Vec<String> {
 pub fn get_type_by_id(id: usize, locale: Option<&str>) -> String {
     functions::get_type_by_id(id, locale)
 }
+
+pub fn get_sprite_by_name(name: &str) -> Result<String, std::io::Error> {
+    functions::get_sprite_by_name(name)
+}
+
 #[cfg(test)]
 mod test;

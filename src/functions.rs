@@ -103,3 +103,15 @@ pub fn get_type_by_id(id: usize, locale: Option<&str>) -> String {
     let types = get_all_types(locale);
     return types.get(id - 1).unwrap().to_owned();
 }
+
+pub fn get_sprite_by_name(name: &str) -> Result<String, std::io::Error> {
+    let file_path = format!("src/data/sprites/pokemon/gen_1/{}", name);
+    let file_content_result = std::fs::read_to_string(&file_path);
+    match file_content_result {
+        Ok(file_content) => {
+            let parsed = file_content.replace("\\e", "\x1b");
+            Ok(parsed)
+        }
+        Err(e) => panic!("error: {}", e),
+    }
+}
