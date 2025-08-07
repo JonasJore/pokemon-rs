@@ -1,7 +1,4 @@
-use crate::{
-    functions::{get_all_regions, get_all_types, get_type_by_id},
-    get_all, get_generation, get_region,
-};
+use crate::{get_all, get_all_regions, get_all_types, get_generation, get_region, get_type_by_id};
 
 fn type_to_string<T>(_: &T) -> String {
     format!("{}", std::any::type_name::<T>())
