@@ -1,10 +1,8 @@
 use std::usize;
 
-// TODO: make so that functions being tested is only imported from lib, instead of functions
 use crate::{
-    functions::{get_all_types, get_type_by_id},
-    get_all, get_by_id, get_generation, get_id_by_name, get_region, get_sprite_by_id,
-    get_sprite_by_name, random,
+    get_all, get_all_types, get_by_id, get_generation, get_id_by_name, get_region,
+    get_sprite_by_id, get_sprite_by_name, get_type_by_id, random,
 };
 
 #[test]
