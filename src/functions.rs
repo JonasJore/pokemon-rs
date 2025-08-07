@@ -126,6 +126,6 @@ pub fn get_sprite_by_name(name: &str) -> Result<String, std::io::Error> {
 }
 
 pub fn get_sprite_by_id(id: usize) -> Result<String, std::io::Error> {
-    let name_by_id = get_by_id(id, Some("en"));
+    let name_by_id = get_by_id(id, None);
     get_sprite_from_path(name_by_id.unwrap())
 }
