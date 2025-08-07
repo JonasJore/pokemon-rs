@@ -30,18 +30,30 @@ pub fn get_by_id(id: usize, locale: Option<&str>) -> Option<&str> {
 pub fn get_id_by_name(name: &str, locale: Option<&str>) -> usize {
     let pokemon_list = list::get_pokemon(locale).unwrap();
     if !pokemon_list.contains(&name) {
-        // TODO: too much code repetition. fix!
-        let list_alternate_locale = match name {
-            name if data::cn::cn().contains(&name) => data::cn::cn(),
-            name if data::de::de().contains(&name) => data::de::de(),
-            name if data::en::en().contains(&name) => data::en::en(),
-            name if data::fr::fr().contains(&name) => data::fr::fr(),
-            name if data::jp::jp().contains(&name) => data::jp::jp(),
-            name if data::ru::ru().contains(&name) => data::ru::ru(),
-            _ => get_panic_by_reason(PanicReason::UnsupportedPokemon),
-        };
+        let locale_to_exclude = locale.unwrap();
+        let all_data: Vec<(&str, Vec<&'static str>)> = vec![
+            ("cn", data::cn::cn()),
+            ("de", data::de::de()),
+            ("en", data::en::en()),
+            ("fr", data::fr::fr()),
+            ("jp", data::jp::jp()),
+            ("ru", data::ru::ru()),
+        ];
 
-        return list_alternate_locale.get_id(name);
+        let alternate_dataset_with_correct_locale = all_data
+            .into_iter()
+            .filter(|dataset| dataset.0 != locale_to_exclude)
+            .find_map(|(lang, vec)| {
+                if vec.contains(&name) {
+                    Some((lang, vec))
+                } else {
+                    None
+                }
+            })
+            .unwrap_or_else(|| get_panic_by_reason(PanicReason::UnsupportedPokemon))
+            .1;
+
+        return alternate_dataset_with_correct_locale.get_id(name);
     }
 
     return pokemon_list.get_id(name);
