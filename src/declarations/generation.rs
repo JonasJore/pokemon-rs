@@ -1,13 +1,12 @@
 pub mod generation {
     use crate::generation::Generation;
 
-    // TODO: lifetime warning here needs to be fixed
     pub trait GenerationExtension {
-        fn generation_sublist<'a>(&'a self, list: Vec<&'a str>) -> Vec<&str>;
+        fn generation_sublist<'input>(&'input self, list: Vec<&'input str>) -> Vec<&'input str>;
     }
 
     impl GenerationExtension for Generation {
-        fn generation_sublist<'a>(&'a self, list: Vec<&'a str>) -> Vec<&str> {
+        fn generation_sublist<'input>(&'input self, list: Vec<&'input str>) -> Vec<&'input str> {
             match self {
                 Generation::Kanto => list[0..=150].to_vec(),
                 Generation::Johto => list[151..=250].to_vec(),
