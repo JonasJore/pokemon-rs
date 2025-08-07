@@ -118,7 +118,7 @@ fn get_sprite_from_path(name: &str) -> Result<String, std::io::Error> {
             Ok(file_content_parsed)
         }
         // TODO: more suitable panic here
-        Err(e) => panic!("error: {}", e),
+        Err(_) => get_panic_by_reason(PanicReason::UnsupportedPokemonSprite),
     }
 }
 
