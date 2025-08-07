@@ -120,8 +120,8 @@ pub fn get_type_by_id(id: usize, locale: Option<&str>) -> String {
 fn get_sprite_from_path(name: &str) -> Result<String, std::io::Error> {
     let mut file_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
     // TODO: make this path more generic when supporting more generations
-    let path = format!("src/data/sprites/pokemon/kanto/{}", name);
-    file_path.push(path);
+    file_path.push("src/data/sprites/pokemon/kanto/");
+    file_path.push(name);
     let file_content = std::fs::read_to_string(&file_path);
     match file_content {
         Ok(raw_file_content) => {
