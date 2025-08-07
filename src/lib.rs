@@ -151,9 +151,31 @@ pub fn get_all_types(locale: Option<&str>) -> Vec<String> {
 pub fn get_type_by_id(id: usize, locale: Option<&str>) -> String {
     functions::get_type_by_id(id, locale)
 }
-
+/// Returns a ANSI escape-sequence-based sprite represented as a String of a Pokemon by name
+///
+/// # Arguments
+///
+/// `name` - `&str` that represents the name of the pokemon you wish to get a sprite for.
+///
+/// # Example
+/// ```rs
+/// let bulbasaur_sprite: Result<String, std::io::Error> = get_sprite_by_name("bulbasaur");
+/// ```
 pub fn get_sprite_by_name(name: &str) -> Result<String, std::io::Error> {
     functions::get_sprite_by_name(name)
+}
+/// Returns a ANSI escape-sequence-based sprite represented as a String of a Pokemon by id
+///
+/// # Arguments
+///
+/// `id` - `usize` that represents the id of the pokemon you wish to get a sprite for.
+///
+/// # Example
+/// ```rs
+/// let ivysaur_sprite: Result<String, std::io::Error> = get_sprite_by_id(2);
+/// ```
+pub fn get_sprite_by_id(id: usize) -> Result<String, std::io::Error> {
+    functions::get_sprite_by_id(id)
 }
 
 #[cfg(test)]

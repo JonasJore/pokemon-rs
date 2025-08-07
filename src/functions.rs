@@ -106,32 +106,27 @@ pub fn get_type_by_id(id: usize, locale: Option<&str>) -> String {
     return types.get(id - 1).unwrap().to_owned();
 }
 
-pub fn get_sprite_by_name(name: &str) -> Result<String, std::io::Error> {
+fn get_sprite_from_path(name: &str) -> Result<String, std::io::Error> {
     let mut file_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
     // TODO: make this path more generic when supporting more generations
-    file_path.push("src/data/sprites/pokemon/gen_1");
-    file_path.push(name);
-    let file_content_result = std::fs::read_to_string(&file_path);
-    match file_content_result {
-        Ok(file_content_raw) => {
-            let file_content_parsed = file_content_raw.replace("\\e", "\x1b");
+    let path = format!("src/data/sprites/pokemon/kanto/{}", name);
+    file_path.push(path);
+    let file_content = std::fs::read_to_string(&file_path);
+    match file_content {
+        Ok(raw_file_content) => {
+            let file_content_parsed = raw_file_content.replace("\\e", "\x1b");
             Ok(file_content_parsed)
         }
+        // TODO: more suitable panic here
         Err(e) => panic!("error: {}", e),
     }
 }
 
+pub fn get_sprite_by_name(name: &str) -> Result<String, std::io::Error> {
+    get_sprite_from_path(name)
+}
+
 pub fn get_sprite_by_id(id: usize) -> Result<String, std::io::Error> {
-    let pokemon_name_by_id = get_by_id(id, Some("en"));
-    let mut file_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-    file_path.push("src/data/sprites/pokemon/gen_1");
-    file_path.push(pokemon_name_by_id.unwrap());
-    let file_content_result = std::fs::read_to_string(&file_path);
-    match file_content_result {
-        Ok(file_content_raw) => {
-            let file_content_parsed = file_content_raw.replace("\\e", "\x1b");
-            Ok(file_content_parsed)
-        }
-        Err(e) => panic!("error: {}", e),
-    }
+    let name_by_id = get_by_id(id, Some("en"));
+    get_sprite_from_path(name_by_id.unwrap())
 }
