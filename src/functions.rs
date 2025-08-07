@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+
 use crate::data::element;
 use crate::data::region;
 use crate::data::{self};
@@ -102,4 +104,29 @@ pub fn get_all_types(locale: Option<&str>) -> Vec<String> {
 pub fn get_type_by_id(id: usize, locale: Option<&str>) -> String {
     let types = get_all_types(locale);
     return types.get(id - 1).unwrap().to_owned();
+}
+
+fn get_sprite_from_path(name: &str) -> Result<String, std::io::Error> {
+    let mut file_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    // TODO: make this path more generic when supporting more generations
+    let path = format!("src/data/sprites/pokemon/kanto/{}", name);
+    file_path.push(path);
+    let file_content = std::fs::read_to_string(&file_path);
+    match file_content {
+        Ok(raw_file_content) => {
+            let file_content_parsed = raw_file_content.replace("\\e", "\x1b");
+            Ok(file_content_parsed)
+        }
+        // TODO: more suitable panic here
+        Err(_) => get_panic_by_reason(PanicReason::UnsupportedPokemonSprite),
+    }
+}
+
+pub fn get_sprite_by_name(name: &str) -> Result<String, std::io::Error> {
+    get_sprite_from_path(name)
+}
+
+pub fn get_sprite_by_id(id: usize) -> Result<String, std::io::Error> {
+    let name_by_id = get_by_id(id, Some("en"));
+    get_sprite_from_path(name_by_id.unwrap())
 }

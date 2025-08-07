@@ -5,6 +5,7 @@ pub mod panic_handling {
         UnsupportedLanguage,
         UnsupportedLanguageContribute,
         UnsupportedPokemon,
+        UnsupportedPokemonSprite,
         TranslatedList,
     }
 
@@ -26,7 +27,11 @@ pub mod panic_handling {
             PanicReason::TranslatedList => panic!(
                 "Translated list could not be returned, please report issues here: {}",
                 REPO_ISSUES
-            )
+            ),
+            PanicReason::UnsupportedPokemonSprite => panic!(
+                "The pokémon given does not seem to have been added as a sprite yet, PRs welcome at {}",
+                REPO_LINK
+            ),
         }
     }
 }

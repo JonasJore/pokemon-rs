@@ -1,8 +1,10 @@
 use std::usize;
 
+// TODO: make so that functions being tested is only imported from lib, instead of functions
 use crate::{
     functions::{get_all_types, get_type_by_id},
-    get_all, get_by_id, get_generation, get_id_by_name, get_region, random,
+    get_all, get_by_id, get_generation, get_id_by_name, get_region, get_sprite_by_id,
+    get_sprite_by_name, random,
 };
 
 #[test]
@@ -50,4 +52,14 @@ fn get_all_types_should_panic_on_unsupported_locale() {
 #[should_panic]
 fn test_wrong_id_should_panic_get_type_by_id() {
     let _ = get_type_by_id(usize::MAX, Some("en"));
+}
+#[test]
+#[should_panic]
+fn test_get_sprite_by_name_should_panic_when_asking_for_non_existant_pokemon_name() {
+    let _ = get_sprite_by_name("jonners_mon");
+}
+#[test]
+#[should_panic]
+fn test_get_sprite_by_id_should_panic_when_askin_for_weird_id() {
+    let _ = get_sprite_by_id(9999);
 }
