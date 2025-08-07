@@ -117,7 +117,6 @@ fn get_sprite_from_path(name: &str) -> Result<String, std::io::Error> {
             let file_content_parsed = raw_file_content.replace("\\e", "\x1b");
             Ok(file_content_parsed)
         }
-        // TODO: more suitable panic here
         Err(_) => get_panic_by_reason(PanicReason::UnsupportedPokemonSprite),
     }
 }
