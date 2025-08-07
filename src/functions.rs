@@ -10,7 +10,6 @@ use crate::generation::Generation;
 use crate::list;
 use crate::util::panic_by_reason::panic_handling::{get_panic_by_reason, PanicReason};
 
-// TODO: can i make this myself to reduce external deps?
 use rand::prelude::SliceRandom;
 
 pub fn get_complete_generation<'a>(generation: &str, locale: Option<&'a str>) -> Vec<&'a str> {
